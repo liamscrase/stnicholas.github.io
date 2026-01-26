@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+
+// 1. Generate a path for every post in your folder
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  return allPosts.map(post => ({
+    params: { slug: post.slug }, 
+    props: { post },
+  }));
+}
+
+// 2. Get the specific post from the props
+const { post } = Astro.props;
+
+// 3. This function converts the Markdown body into HTML
+const { Content } = await post.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{post.data.title}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/posts">← Back to Blog</a>
+    </nav>
+
+    <main>
+      <h1>{post.data.title}</h1>
+      
+      {post.data.date && (
+        <p><em>Published on: {post.data.date.toDateString()}</em></p>
+      )}
+
+      <!-- {post.data.image && (
+        <img src={post.data.image} alt={post.data.title} style="max-width: 100%;" />
+      )} -->
+
+      <hr />
+
+      <article>
+        <Content />
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const posts = defineCollection({
-  type: 'content',
+  type: 'content', // This tells Astro it's Markdown
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -10,5 +10,5 @@ const posts = defineCollection({
 });
 
 export const collections = {
-  'posts': posts, // Make sure this matches your folder name in src/content/
+  'posts': posts, // This key MUST match your folder name
 };
