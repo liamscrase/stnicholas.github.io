@@ -6,10 +6,10 @@ const allPosts = await getCollection('posts');
 <Layout title="Home - stnicholas.github.io">
 
 {allPosts.map(post => (
-  <a href={`/posts/${post.slug}`}>
+  <a href={`/stnicholas.github.io/posts/${post.slug}`}>
     <h2>{post.data.title}</h2>
     <p>{post.data.description}</p>
   </a>
 ))}
-<button><a href="/">Go to Home</a></button>
+<button><a href="/stnicholas.github.io/">Go to Home</a></button>
 </Layout>
