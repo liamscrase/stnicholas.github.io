@@ -13,9 +13,6 @@
     "sass": "^1.97.3",
     "sass-embedded-win32-x64": "^1.97.3"
   },
-  "devDependencies": {
-    "sass-embedded": "^1.97.3"
-  },
   "optionalDependencies": {
     "sass-embedded-linux-x64": "^1.97.3"
   }
