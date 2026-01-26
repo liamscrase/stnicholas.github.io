@@ -10,10 +10,6 @@
   },
   "dependencies": {
     "astro": "^5.16.15",
-    "sass": "^1.97.3",
-    "sass-embedded-win32-x64": "^1.97.3"
-  },
-  "optionalDependencies": {
-    "sass-embedded-linux-x64": "^1.97.3"
+    "sass": "^1.97.3"
   }
 }
