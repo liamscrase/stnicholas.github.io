@@ -5,4 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://stnicholas.github.io',
   base: '/',
+  legacy: {
+    collections: true,
+  },
 });
