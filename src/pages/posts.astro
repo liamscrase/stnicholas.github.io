@@ -3,13 +3,21 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts');
 ---
-<Layout title="Home - stnicholas.github.io">
-
-{allPosts.map(post => (
-  <a href={`/stnicholas.github.io/posts/${post.slug}`}>
-    <h2>{post.data.title}</h2>
-    <p>{post.data.description}</p>
-  </a>
-))}
-<button><a href="/">Go to Home</a></button>
+<Layout title="Blog - St. Nicholas Orthodox Church">
+  <link rel="stylesheet" href="/posts.css" />
+  
+  <div class="content">
+    <h1>Blog Posts</h1>
+    
+    <div class="posts-grid">
+      {allPosts.map(post => (
+        <a href={`/posts/${post.slug}`} class="post-card">
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+        </a>
+      ))}
+    </div>
+    
+    <a href="/" class="back-button">← Go to Home</a>
+  </div>
 </Layout>

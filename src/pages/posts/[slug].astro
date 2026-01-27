@@ -1,4 +1,5 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 // 1. Generate a path for every post in your folder
@@ -17,32 +18,24 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>{post.data.title}</title>
-  </head>
-  <body>
-    <nav>
+<Layout title={`${post.data.title} - St. Nicholas Orthodox Church`}>
+  <link rel="stylesheet" href="/post.css" />
+  
+  <div class="content">
+    <nav class="post-navigation">
       <a href="/posts">← Back to Blog</a>
     </nav>
 
-    <main>
+    <header class="post-header">
       <h1>{post.data.title}</h1>
       
       {post.data.date && (
-        <p><em>Published on: {post.data.date.toDateString()}</em></p>
+        <p class="post-meta">Published on: {post.data.date.toDateString()}</p>
       )}
+    </header>
 
-      <!-- {post.data.image && (
-        <img src={post.data.image} alt={post.data.title} style="max-width: 100%;" />
-      )} -->
-
-      <hr />
-
-      <article>
-        <Content />
-      </article>
-    </main>
-  </body>
-</html>
+    <article class="post-content">
+      <Content />
+    </article>
+  </div>
+</Layout>
