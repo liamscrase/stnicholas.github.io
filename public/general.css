@@ -22,6 +22,10 @@ body {
   font-family: Zalando Sans;
 }
 
+.solid-bg #body-wrapper {
+  margin-top: 0 !important;
+}
+
 #body-wrapper {
   margin-top: 66px;
   position: relative;
@@ -197,7 +201,10 @@ p {
 
 @media (min-width: 800px) {
   #body-wrapper {
-    margin-top: -164px;
+    margin-top: -124px;
+  }
+  .solid-bg #body-wrapper {
+    margin-top: 0 !important;
   }
   h1 {
     font-size: 64px;

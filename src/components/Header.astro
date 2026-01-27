@@ -1,8 +1,10 @@
 ---
 const siteTitle = "The Serious Sandwich";
+const { currentPath } = Astro.props;
+const isHomePage = currentPath === '/';
 ---
 
-<nav class="desktop-navbar">
+<nav class={`desktop-navbar ${!isHomePage ? 'solid-bg' : ''}`}>
   <div class="desktop-navbar-container">
     <a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
     <div class="nav-links">
@@ -10,12 +12,13 @@ const siteTitle = "The Serious Sandwich";
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a href="/posts/">Blog</a></li>
+        <li><a href="/services/">Services</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<nav class="mobile-navbar">
+<nav class={`mobile-navbar ${!isHomePage ? 'solid-bg' : ''}`}>
   <input type="checkbox" id="menu-toggle" class="menu-toggle" />
   <div class="mobile-navbar-container">
     <a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
