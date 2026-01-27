@@ -21,21 +21,29 @@ const { Content } = await post.render();
 <Layout title={`${post.data.title} - St. Nicholas Orthodox Church`}>
   <link rel="stylesheet" href="/post.css" />
   
-  <div class="content">
-    <nav class="post-navigation">
-      <a href="/posts">← Back to Blog</a>
-    </nav>
+  <div id="body-wrapper">
+    {post.data.image && (
+      <div class="post-hero">
+        <img src={post.data.image} alt={post.data.title} class="post-hero-image" />
+      </div>
+    )}
+    
+    <div class="content">
+      <nav class="post-navigation">
+        <a href="/posts">← Back to Blog</a>
+      </nav>
 
-    <header class="post-header">
-      <h1>{post.data.title}</h1>
-      
-      {post.data.date && (
-        <p class="post-meta">Published on: {post.data.date.toDateString()}</p>
-      )}
-    </header>
+      <header class="post-header">
+        <h1>{post.data.title}</h1>
+        
+        {post.data.date && (
+          <p class="post-meta">Published on: {post.data.date.toDateString()}</p>
+        )}
+      </header>
 
-    <article class="post-content">
-      <Content />
-    </article>
+      <article class="post-content">
+        <Content />
+      </article>
+    </div>
   </div>
 </Layout>
