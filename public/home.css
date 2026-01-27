@@ -19,6 +19,14 @@
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
+.hero-section .inner {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
 .hero-section .hero-img {
   height: 100%;
   width: 100%;
@@ -29,4 +37,10 @@
 .hero-section img {
   height: 200px;
   display: block;
+}
+
+@media (min-width: 1350px) {
+  .hero-section {
+    height: 700px;
+  }
 }/*# sourceMappingURL=home.css.map */

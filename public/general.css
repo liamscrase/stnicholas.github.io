@@ -3,11 +3,11 @@ html {
 }
 
 :root {
-  --black: #000000;
+  --black: #151515;
   --white: #ffffff;
   --off-white: rgba(255, 255, 255, 0.7);
   --border-color: #cbcbcb;
-  --red: #9A3437;
+  --red: #4a1016;
   --beige: #F0EEE9;
 }
 
