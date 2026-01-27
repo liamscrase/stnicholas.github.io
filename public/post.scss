@@ -1,3 +1,19 @@
+ .post-hero {
+     width: 100%;
+     margin-bottom: 2rem;
+     overflow: hidden;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+     .post-hero-image {
+         width: 100%;
+         height: auto;
+         display: block;
+         object-fit: cover;
+         max-height: 500px;
+     }
+ }
+
  .post-navigation {
      margin-bottom: 2rem;
 

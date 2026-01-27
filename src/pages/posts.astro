@@ -14,9 +14,11 @@ const allPosts = await getCollection("posts");
         {
           allPosts.map((post) => (
             <a href={`/posts/${post.slug}`} class="post-card">
-              {post.data.image && (
-                <img src={post.data.image} alt={post.data.title} class="post-hero-image" />
-              )}
+              <img 
+                src={post.data.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="400"%3E%3Crect width="800" height="400" fill="%23e0e0e0"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%23666"%3ENo Image%3C/text%3E%3C/svg%3E'} 
+                alt={post.data.title} 
+                class="post-hero-image" 
+              />
               <div class="post-card-content">
                 <h2>{post.data.title}</h2>
                 {post.data.date && (
