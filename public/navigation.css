@@ -1,0 +1,303 @@
+.desktop-navbar {
+  width: 100%;
+  display: none;
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.desktop-navbar .desktop-navbar-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 32px 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 32px;
+}
+.desktop-navbar .desktop-navbar-container .logo {
+  height: 101px;
+  display: block;
+}
+.desktop-navbar .desktop-navbar-container .social {
+  margin-right: 12px;
+}
+.desktop-navbar .desktop-navbar-container .social a {
+  width: 24px;
+  height: 24px;
+}
+.desktop-navbar .desktop-navbar-container .nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  width: 179.3px;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li {
+  display: flex;
+  align-items: center;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 8px 0;
+  border-radius: 4px;
+  transition: color 0.3s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-family: "Zalando Sans";
+  transition: opacity 0.3s ease;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li a:hover {
+  opacity: 0.7;
+}
+
+.mobile-navbar {
+  z-index: 1000;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  background-color: var(--black);
+}
+.mobile-navbar .title {
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 4px;
+  transition: color 0.3s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-family: "Zalando Sans";
+}
+.mobile-navbar .mobile-navbar-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  gap: 32px;
+}
+.mobile-navbar .mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.mobile-navbar .menu-toggle {
+  display: none;
+}
+.mobile-navbar .hamburger {
+  position: relative;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+.mobile-navbar .hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.mobile-navbar .hamburger span:nth-child(1) {
+  top: 4px;
+}
+.mobile-navbar .hamburger span:nth-child(2) {
+  top: 12px;
+}
+.mobile-navbar .hamburger span:nth-child(3) {
+  top: 20px;
+}
+.mobile-navbar .menu-toggle:checked ~ .mobile-navbar-container .hamburger span:nth-child(1) {
+  top: 12px;
+  transform: rotate(45deg);
+}
+.mobile-navbar .menu-toggle:checked ~ .mobile-navbar-container .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-navbar .menu-toggle:checked ~ .mobile-navbar-container .hamburger span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  left: -80vw;
+  width: 80vw;
+  max-width: 340px;
+  height: 100vh;
+  background: #141414;
+  transition: left 0.3s;
+  z-index: 1050;
+}
+.offcanvas-menu .menu-items {
+  margin: 80px 20px 36px 20px;
+}
+.offcanvas-menu .menu-items .social {
+  justify-content: flex-start;
+  margin-left: 32px;
+}
+.offcanvas-menu .menu-items ul {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  margin-bottom: 32px;
+}
+.offcanvas-menu .menu-items ul li {
+  width: 100%;
+  text-decoration: none;
+  display: block;
+}
+.offcanvas-menu .menu-items ul li a {
+  display: block;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 16px 32px;
+}
+
+.offcanvas-backdrop {
+  display: none;
+  position: fixed;
+  z-index: 1049;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.32);
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.menu-toggle:checked ~ .offcanvas-backdrop {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-toggle:checked ~ .offcanvas-menu {
+  left: 0;
+}
+
+footer {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 50px 0;
+  text-align: center;
+  position: relative;
+}
+footer .content {
+  z-index: 2;
+  position: relative;
+}
+footer .google-map {
+  border-radius: 12px;
+  margin-bottom: 80px;
+}
+footer .google-map iframe {
+  border-radius: 12px;
+}
+footer .copyright, footer .footer-hours {
+  display: block;
+  color: var(--text-color-alt);
+  font-size: 11px;
+  font-weight: 300;
+  margin-top: 24px;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+footer .footer-content .links {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+}
+footer .footer-content .links a {
+  color: var(--white);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-family: "Zalando Sans";
+  transition: color 0.3s ease;
+}
+footer .footer-content .links a:hover {
+  color: var(--hover-color);
+}
+footer .footer-content .terms {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+footer .footer-content .terms a {
+  color: var(--text-color-alt);
+  font-size: 11px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+footer .footer-content .terms a:hover {
+  color: var(--text-color);
+}
+footer .footer-content .terms span {
+  color: var(--text-color-alt);
+  font-size: 11px;
+}
+
+@media (min-width: 800px) {
+  .header-bg {
+    display: block;
+    width: 100%;
+    height: 164px;
+    z-index: -1;
+    background-color: #000;
+  }
+  .mobile-navbar {
+    display: none;
+  }
+  .desktop-navbar {
+    display: flex;
+  }
+  footer .google-map {
+    margin-bottom: 80px;
+  }
+  footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  footer .footer-content .links {
+    justify-content: flex-start;
+  }
+  footer .footer-content .terms {
+    justify-content: flex-end;
+  }
+}/*# sourceMappingURL=navigation.css.map */

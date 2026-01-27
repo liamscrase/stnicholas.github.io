@@ -1,12 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home - stnicholas.github.io">
-  <main>
-    <h2>Welcome</h2>
-    <p>This is the homepage. Yo.</p>
-    <button><a href="/posts">Go to Posts</a></button>
-  </main>
+  <div id="body-wrapper">
+    <div class="hero-section">
+      <img
+        class="hero-img"
+        src="/images/hero-img-1600.webp"
+        srcset="
+    /images/hero-img-600.webp 600w,
+    /images/hero-img-1024.webp 1024w,
+    /images/hero-img-1600.webp 1600w,
+    /images/hero-img-2200.webp 2200w
+  "
+        sizes="100vw"
+        alt="St Nicholas hero banner"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width="1600"
+        height="900"
+      />
+    </div>
+  </div>
 </Layout>
-
