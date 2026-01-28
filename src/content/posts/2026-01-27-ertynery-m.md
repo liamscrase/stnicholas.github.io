@@ -4,7 +4,7 @@ layout: post
 date: 2026-01-28
 comments: true
 description: Christ is Born! Glorify Him!
-image: /public/files/nativity.jpg
+image: /files/nativity.jpg
 ---
 Our parish gathered in the warmth of the season to celebrate the Incarnation of our Lord. From the moving chants of the Vigil to the triumphant Festal Liturgy, the spirit of Bethlehem was truly present in our community.
 
