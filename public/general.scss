@@ -3,8 +3,8 @@ html {
 }
 
 :root {
-  --black: #000;
-  --off-black: rgba(0, 0, 0, 0.7);
+  --black: #554B41;
+  --off-black: #938E89;
   --white: #fffcf7;
   --off-white: #FDF8EF;
   --border-color: #e5ddcf;
@@ -23,14 +23,13 @@ html {
 }
 
 body {
-  font-family: Zalando Sans;
+  font-family: "Noto Serif", serif;
   background-color: var(--off-white);
+  color: var(--black);
 }
 
 #body-wrapper {
-  margin-top: 66px;
-  position: relative;
-  z-index: 1;
+padding-top: 85px;
 }
 
 .content {
@@ -41,23 +40,25 @@ body {
 }
 
 h1 {
-  font-family: "Noto Serif";
+  font-family: "Noto Serif", serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 h2 {
   margin-bottom: 24px;
-  font-family: "Noto Serif";
+  font-family: "Noto Serif", serif;
   font-weight: 500;
   font-size: 24px;
+  text-align: center;
 }
 
 h3 {
   font-size: 20px;
-    font-family: "Noto Serif";
+    font-family: "Noto Serif", serif;
 
   font-weight: 500;
   margin-bottom: 12px;
@@ -68,6 +69,8 @@ p {
   font-style: normal;
   line-height: 20px;
   margin-bottom: 12px;
+  font-family: "Zalando Sans", sans-serif;
+  max-width: 600px;
 }
 
 ul {
@@ -119,25 +122,18 @@ ul {
 
 .divider {
   img {
-    width: 200px;
-    padding-bottom: 24px;
+    width: 100%;
+    padding-bottom: 40px;
   }
 }
 
 
 // Desktop styles
 @media (min-width: 800px) {
-  #body-wrapper {
-    margin-top: -124px;
-  }
-
-  .solid-bg #body-wrapper {
-    margin-top: 0 !important;
-  }
 
   h1 {
     font-size: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
   }
 
   h2 {
@@ -145,6 +141,6 @@ ul {
   }
 
   .content {
-    padding: 80px 20px;
+    padding: 70px 20px;
   }
 }

@@ -1,26 +1,29 @@
+nav {
+  transition: box-shadow 0.3s ease;
+}
+nav.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .desktop-navbar {
   width: 100%;
   display: none;
-  position: relative;
+  position: fixed;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-}
-.desktop-navbar.solid-bg {
-  background: var(--red);
+  background: var(--off-white);
 }
 .desktop-navbar .desktop-navbar-container {
   margin: auto;
   display: flex;
   align-items: center;
-  padding: 32px 20px;
+  padding: 20px;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1200px;
   width: 100%;
   gap: 32px;
 }
 .desktop-navbar .desktop-navbar-container .logo {
-  height: 60px;
+  height: 45px;
   display: block;
 }
 .desktop-navbar .desktop-navbar-container .social {
@@ -47,13 +50,12 @@
 }
 .desktop-navbar .desktop-navbar-container .nav-links ul li a {
   text-decoration: none;
-  color: var(--white);
-  padding: 8px 0;
+  color: var(--black);
   border-radius: 4px;
   transition: color 0.3s ease;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Zalando Sans";
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Noto Serif", serif;
   transition: opacity 0.3s ease;
 }
 .desktop-navbar .desktop-navbar-container .nav-links ul li a:hover {
@@ -67,10 +69,7 @@
   flex-direction: column;
   position: fixed;
   top: 0;
-  background-color: var(--red);
-}
-.mobile-navbar.solid-bg {
-  background: var(--red);
+  background-color: var(--off-white);
 }
 .mobile-navbar .title {
   text-decoration: none;
@@ -118,7 +117,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--white);
+  background: var(--black);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -277,7 +276,7 @@ footer .footer-content .terms span {
     width: 100%;
     height: 164px;
     z-index: -1;
-    background-color: #000;
+    background-color: var(--black);
   }
   .mobile-navbar {
     display: none;

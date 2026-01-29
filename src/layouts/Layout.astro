@@ -8,7 +8,6 @@ interface Props {
 
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isHomePage = currentPath === "/";
 ---
 
 <!doctype html>
@@ -33,10 +32,15 @@ const isHomePage = currentPath === "/";
     />
   </head>
   <body>
-    <div class={!isHomePage ? "solid-bg" : ""}>
-      <Header currentPath={currentPath} />
+    <Header currentPath={currentPath} />
+    <div id="body-wrapper">
       <slot />
-      <Footer />
     </div>
+    <div class="content">
+      <div class="divider">
+        <img src="/images/line-art/divider2.svg" alt="divider" />
+      </div>
+    </div>
+    <Footer />
   </body>
 </html>
