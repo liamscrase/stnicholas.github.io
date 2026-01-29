@@ -1,7 +1,6 @@
   h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333;
   }
 
   .posts-grid {
@@ -36,13 +35,13 @@
     h2 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: var(--black);
       display: -webkit-box;
       -webkit-line-clamp: 2;
       line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: left;
     }
 
     .post-date {
