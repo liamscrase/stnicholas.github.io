@@ -146,20 +146,16 @@
 .offcanvas-menu {
   position: fixed;
   top: 0;
-  left: -80vw;
+  right: -80vw;
   width: 80vw;
   max-width: 340px;
   height: 100vh;
   background: #141414;
-  transition: left 0.3s;
+  transition: right 0.3s ease;
   z-index: 1050;
 }
 .offcanvas-menu .menu-items {
   margin: 80px 20px 36px 20px;
-}
-.offcanvas-menu .menu-items .social {
-  justify-content: flex-start;
-  margin-left: 32px;
 }
 .offcanvas-menu .menu-items ul {
   display: flex;
@@ -202,7 +198,7 @@
   pointer-events: auto;
 }
 .menu-toggle:checked ~ .offcanvas-menu {
-  left: 0;
+  right: 0;
 }
 
 footer {
@@ -239,6 +235,7 @@ footer .footer-content .links {
   display: flex;
   gap: 32px;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 footer .footer-content .links a {

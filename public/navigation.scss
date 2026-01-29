@@ -177,21 +177,16 @@
 .offcanvas-menu {
   position: fixed;
   top: 0;
-  left: -80vw;
+  right: -80vw;
   width: 80vw;
   max-width: 340px;
   height: 100vh;
   background: #141414;
-  transition: left 0.3s;
+  transition: right 0.3s ease;
   z-index: 1050;
 
   .menu-items {
     margin: 80px 20px 36px 20px;
-
-    .social {
-      justify-content: flex-start;
-      margin-left: 32px;
-    }
 
     ul {
       display: flex;
@@ -241,7 +236,7 @@
   }
 
   .offcanvas-menu {
-    left: 0;
+    right: 0;
   }
 }
 
@@ -287,6 +282,7 @@ footer {
       display: flex;
       gap: 32px;
       justify-content: center;
+      flex-wrap: wrap;
       width: 100%;
 
       a {
