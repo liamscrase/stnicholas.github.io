@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -8,7 +8,7 @@ interface Props {
 
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isHomePage = currentPath === '/';
+const isHomePage = currentPath === "/";
 ---
 
 <!doctype html>
@@ -17,12 +17,10 @@ const isHomePage = currentPath === '/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>St. Nicholas Orthodox Church Christchurch</title>
-        <link rel="stylesheet" href="/general.css" />
+
+    <link rel="stylesheet" href="/general.css" />
     <link rel="stylesheet" href="/navigation.css" />
-    <link rel="stylesheet" href="/home.css" />
-    <link rel="stylesheet" href="/layout.css" />
     <link rel="stylesheet" href="/style.css" />
-      <link rel="stylesheet" href="/posts.css" />
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,12 +28,12 @@ const isHomePage = currentPath === '/';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class={!isHomePage ? 'solid-bg' : ''}>
+    <div class={!isHomePage ? "solid-bg" : ""}>
       <Header currentPath={currentPath} />
       <slot />
       <Footer />

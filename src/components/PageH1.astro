@@ -1,0 +1,12 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="divider">
+  <img src="/images/line-art/divider.svg" alt="divider" />
+</div>
+<h1>{title}</h1>

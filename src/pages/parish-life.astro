@@ -2,18 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
+import PageH1 from "../components/PageH1.astro";
 ---
 
-<Layout title="Blog - St. Nicholas Orthodox Church">  
+<Layout title="Parish Life - St. Nicholas Orthodox Church">  
+      <link rel="stylesheet" href="/posts.css" />
+
   <div id="body-wrapper">
     <div class="content">
-      <h1>Blog Posts</h1>
+      <PageH1 title="Parish Life" />
       <div class="posts-grid">
         {
           allPosts.map((post) => (
             <a href={`/posts/${post.slug}`} class="post-card">
               <img 
-                src={post.data.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="400"%3E%3Crect width="800" height="400" fill="%23e0e0e0"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%23666"%3ENo Image%3C/text%3E%3C/svg%3E'} 
+                src={post.data.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="400"%3E%3Crect width="800" height="400" fill="%23f5f3ed"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Noto Serif" font-size="24" fill="%231a1a1a"%3ENo Image%3C/text%3E%3C/svg%3E'} 
                 alt={post.data.title} 
                 class="post-hero-image" 
               />

@@ -1,0 +1,44 @@
+.regular-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 55px;
+}
+.regular-schedule .service {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-direction: row;
+}
+.regular-schedule .service img {
+  width: 80px;
+  height: 120px;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.regular-schedule .service p {
+  color: var(--off-black);
+}
+.regular-schedule .service .inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-container {
+  background-color: var(--beige);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 600px;
+}
+
+@media (min-width: 800px) {
+  .regular-schedule {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+  }
+}/*# sourceMappingURL=schedule.css.map */

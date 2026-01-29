@@ -3,12 +3,13 @@ html {
 }
 
 :root {
-  --black: #151515;
-  --white: #ffffff;
-  --off-white: rgba(255, 255, 255, 0.7);
-  --border-color: #cbcbcb;
-  --red: #4a1016;
-  --beige: #F0EEE9;
+  --black: #000;
+  --off-black: rgba(0, 0, 0, 0.7);
+  --white: #fffcf7;
+  --off-white: #FDF8EF;
+  --border-color: #e5ddcf;
+  --red: #8b2635;
+  --beige: #f0ebe1;
 }
 
 * {
@@ -20,10 +21,7 @@ html {
 
 body {
   font-family: Zalando Sans;
-}
-
-.solid-bg #body-wrapper {
-  margin-top: 0 !important;
+  background-color: var(--off-white);
 }
 
 #body-wrapper {
@@ -40,25 +38,24 @@ body {
 }
 
 h1 {
-  font-family: "League Gothic";
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 56px;
+  font-family: "Noto Serif";
+  font-weight: 700;
+  font-size: 36px;
   line-height: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 h2 {
-  margin-bottom: 20px;
-  font-family: "League Gothic";
+  margin-bottom: 24px;
+  font-family: "Noto Serif";
   font-weight: 500;
-  text-transform: uppercase;
-  font-size: 42px;
+  font-size: 24px;
 }
 
 h3 {
   font-size: 20px;
-  font-weight: 700;
+  font-family: "Noto Serif";
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
@@ -67,6 +64,10 @@ p {
   font-style: normal;
   line-height: 20px;
   margin-bottom: 12px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .button {
@@ -106,6 +107,11 @@ p {
   border-width: 1px;
 }
 
+.divider img {
+  width: 200px;
+  padding-bottom: 24px;
+}
+
 @media (min-width: 800px) {
   #body-wrapper {
     margin-top: -124px;
@@ -114,10 +120,11 @@ p {
     margin-top: 0 !important;
   }
   h1 {
-    font-size: 64px;
+    font-size: 40px;
+    margin-bottom: 50px;
   }
   h2 {
-    font-size: 48px;
+    font-size: 28px;
   }
   .content {
     padding: 80px 20px;

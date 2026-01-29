@@ -7,10 +7,10 @@
   display: none;
   position: relative;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
 
   &.solid-bg {
-    background: #000000;
+    background: var(--red);
   }
 
   .desktop-navbar-container {
@@ -59,9 +59,7 @@
             padding: 8px 0;
             border-radius: 4px;
             transition: color 0.3s ease;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: 16px;
             font-weight: 600;
             font-family: "Zalando Sans";
             transition: opacity 0.3s ease;
@@ -86,7 +84,7 @@
   background-color: var(--black);
 
   &.solid-bg {
-    background: #000000;
+    background: var(--red);
   }
 
   .title {
