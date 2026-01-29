@@ -67,7 +67,7 @@
   flex-direction: column;
   position: fixed;
   top: 0;
-  background-color: var(--black);
+  background-color: var(--red);
 }
 .mobile-navbar.solid-bg {
   background: var(--red);
