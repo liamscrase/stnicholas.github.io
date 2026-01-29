@@ -1,8 +1,3 @@
-p {
-  text-align: center;
-  margin: auto;
-}
-
 .regular-schedule {
   display: flex;
   flex-direction: column;

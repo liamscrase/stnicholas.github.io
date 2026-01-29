@@ -66,7 +66,7 @@ p {
   line-height: 20px;
   margin-bottom: 12px;
   font-family: "Zalando Sans", sans-serif;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 ul {
@@ -110,9 +110,22 @@ ul {
   border-width: 1px;
 }
 
+.page-header {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-header .divider {
+  margin-bottom: 50px;
+}
+
+.divider {
+  width: 100%;
+}
 .divider img {
   width: 100%;
-  padding-bottom: 40px;
 }
 
 @media (min-width: 800px) {
