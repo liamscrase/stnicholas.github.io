@@ -24,14 +24,12 @@ const { Content } = await post.render();
     <div class="content">
       <div class="post-hero">
         <img
-          src={post.data.image?.replace(/^\/public/, '') || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="500"%3E%3Crect width="1200" height="500" fill="%23e0e0e0"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="32" fill="%23666"%3ENo Image%3C/text%3E%3C/svg%3E'}
+          src={post.data.image?.replace(/^\/public/, '') || '/images/cross.svg'}
           alt={post.data.title}
           class="post-hero-image"
         />
       </div>
-      <nav class="post-navigation">
-        <a href="/posts">← Back to Blog</a>
-      </nav>
+      <a href="/parish-life" class="button tertiary small"><span class="icon-arrow_back_ios"></span> Back to Parish Life</a>
 
       <header class="post-header">
         <h1>{post.data.title}</h1>
