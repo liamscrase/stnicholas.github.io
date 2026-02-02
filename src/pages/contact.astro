@@ -43,9 +43,9 @@ import PageH1 from "../components/PageH1.astro";
       <div class="call">
         <h3>Give us a call</h3>
 
-        <a class="button secondary medium" href="tel:0211892915">
+        <a class="button secondary medium" href="tel:021 123 4567">
           <span class="material-icons" aria-hidden="true">phone</span>
-          021 189 2915
+          021 123 4567
         </a>
       </div>
     </section>
@@ -126,7 +126,7 @@ import PageH1 from "../components/PageH1.astro";
       e.preventDefault();
       const data = new FormData(form);
       try {
-        const res = await fetch("https://formspree.io/f/xdanabpw", {
+        const res = await fetch("https://formspree.io/f/placeholder", {
           method: "POST",
           body: data,
           headers: { Accept: "application/json" },
