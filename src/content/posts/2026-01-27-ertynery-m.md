@@ -3,17 +3,16 @@ title: Feast of the Nativity at St. Nicholas
 layout: post
 date: 2026-01-28
 comments: true
-description: Christ is Born! Glorify Him!
-image: /files/nativity.jpg
+description: The Great Blessing of the Waters
+image: /files/photo_2025-12-18_19-25-09.jpg
 ---
-Our parish gathered in the warmth of the season to celebrate the Incarnation of our Lord. From the moving chants of the Vigil to the triumphant Festal Liturgy, the spirit of Bethlehem was truly present in our community.
+Our parish gathered in the light of Theophany to celebrate the Baptism of our Lord in the Jordan. Through the solemn prayers and the great blessing of the waters, creation itself was sanctified, and the mystery of the Holy Trinity was revealed among us.
 
-After the service, we shared a festive meal, enjoying the abundance of the summer harvest and the joy of breaking the fast together. Thank you to the choir, the servers, and everyone who made this feast a beautiful homecoming.
+As the waters were blessed, we were reminded of our own baptism and renewed in the grace poured out upon the world. Following the service, we shared fellowship and joy, grateful for all who labored to make this feast a reverent and life-giving celebration.
 
-### **Христос Рождается! Славите Его!**
+Во Иордане крещающуся Тебе, Господи,  
+Троическое явися поклонение!
 
-Наш приход собрался в эти теплые дни, чтобы встретить праздник Боговоплощения. От торжественных песнопений Всенощного бдения до праздничной Литургии — дух Вифлеема пребывал среди нас.
+Наш приход собрался в светлый праздник Богоявления, чтобы прославить Крещение Господа нашего Иисуса Христа во Иордане. В торжественных молитвах и Великом освящении воды явилась благодать Божия, освящающая всё творение и открывающая миру тайну Святой Троицы.
 
-После службы мы разделили праздничную трапезу, наслаждаясь летним изобилием и радостью общения. Благодарим хор, алтарников и всех, кто помог сделать этот праздник по-домашнему теплым и светлым.
-
-![](/files/puppy.png)
+В освящённых водах мы вновь вспомнили собственное Крещение и обновили в себе дар Божией милости. После богослужения мы разделили радость общения, с благодарностью всем, кто потрудился ради этого благоговейного и благодатного праздника.
