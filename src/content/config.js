@@ -7,6 +7,8 @@ const posts = defineCollection({
     description: z.string().optional(),
     date: z.coerce.date().optional(),
     image: z.string().optional(),
+    layout: z.string().optional(), // CMS field
+    comments: z.boolean().optional(), // CMS field
   }),
 });
 
