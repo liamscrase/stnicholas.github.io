@@ -11,153 +11,26 @@ import PageH1 from "../components/PageH1.astro";
       title="Contact"
       subheader="If you have questions or catering enquiries, drop us a message or give us a ring."
     />
-    <section class="contact-options">
-      <div class="contact-form-wrapper">
-        <h3>Send us a message</h3>
-        <form id="contact-form" class="contact-form" novalidate>
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-
-          <label>
-            Message
-            <textarea name="message" rows="6" required></textarea>
-          </label>
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="New contact form submission"
-          />
-
-          <button type="submit" class="button secondary medium">Send</button>
-        </form>
-        <div id="contact-result" aria-live="polite"></div>
+    
+    <div class="contact-container">
+      <div class="contact-person">
+        <h3>Father Valentin Basiuk</h3>
+        <p><strong>Ph:</strong> <a href="tel:033320514">03 332 0514</a></p>
+        <p><strong>Mobile:</strong> <a href="tel:0279038343">027 903 8343</a></p>
+        <p><strong>Email:</strong> <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a></p>
       </div>
-      <div class="call">
-        <h3>Give us a call</h3>
-
-        <a class="button secondary medium" href="tel:021 123 4567">
-          <span class="material-icons" aria-hidden="true">phone</span>
-          021 123 4567
-        </a>
+      
+      <div class="contact-person">
+        <h3>Deacon Vladimir Filipovich, Church Warden</h3>
+        <p><strong>Ph:</strong> <a href="tel:033588816">03 358 8816</a></p>
+        <p><strong>Mobile:</strong> <a href="tel:0210306703">021 030 6703</a></p>
+        <p><strong>Email:</strong> <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a></p>
       </div>
-    </section>
+      
+      <div class="church-address">
+        <h3>Church Address</h3>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=297+Brougham+Street+Christchurch" target="_blank" rel="noopener noreferrer">297 Brougham Street, Christchurch</a></p>
+      </div>
+    </div>
   </div>
 </Layout>
-
-<script>
-  (function () {
-    const form = document.getElementById(
-      "contact-form",
-    ) as HTMLFormElement | null;
-    const result = document.getElementById(
-      "contact-result",
-    ) as HTMLElement | null;
-    if (!form || !result) return;
-
-    function showResult(
-      el: HTMLElement,
-      message: string,
-      status: "success" | "error",
-      details?: { name?: string; email?: string; message?: string },
-    ) {
-      // Clear existing content
-      el.innerHTML = "";
-      el.className = "";
-
-      // Title
-      const title = document.createElement("div");
-      title.textContent = message;
-      el.appendChild(title);
-
-      // Optional details (safe text-only rendering)
-      if (details) {
-        const container = document.createElement("div");
-        container.className = "result-details";
-
-        if (details.name) {
-          const p = document.createElement("p");
-          const strong = document.createElement("strong");
-          strong.textContent = "Name: ";
-          p.appendChild(strong);
-          p.appendChild(document.createTextNode(details.name));
-          container.appendChild(p);
-        }
-
-        if (details.email) {
-          const p = document.createElement("p");
-          const strong = document.createElement("strong");
-          strong.textContent = "Email: ";
-          p.appendChild(strong);
-          p.appendChild(document.createTextNode(details.email));
-          container.appendChild(p);
-        }
-
-        if (details.message) {
-          const p = document.createElement("p");
-          const strong = document.createElement("strong");
-          strong.textContent = "Message: ";
-          p.appendChild(strong);
-          const msgSpan = document.createElement("span");
-          msgSpan.textContent = details.message;
-          msgSpan.style.whiteSpace = "pre-wrap";
-          p.appendChild(msgSpan);
-          container.appendChild(p);
-        }
-
-        el.appendChild(container);
-      }
-
-      // force reflow so transitions apply when toggling
-      void el.offsetWidth;
-      el.classList.add("show");
-      if (status === "success") el.classList.add("success");
-      if (status === "error") el.classList.add("error");
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const res = await fetch("https://formspree.io/f/placeholder", {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        if (res.ok) {
-          // capture submitted values before resetting the form
-          const submitted = {
-            name:
-              (form.querySelector('[name="name"]') as HTMLInputElement)
-                ?.value || "",
-            email:
-              (form.querySelector('[name="email"]') as HTMLInputElement)
-                ?.value || "",
-            message:
-              (form.querySelector('[name="message"]') as HTMLTextAreaElement)
-                ?.value || "",
-          };
-          showResult(
-            result,
-            "Thanks — message sent. We will get back to you soon.",
-            "success",
-            submitted,
-          );
-          form.classList.add("contact-sent");
-          form.reset();
-        } else {
-          showResult(result, "Send failed. Please try again.", "error");
-        }
-      } catch (err) {
-        showResult(result, "Network error. Try again later.", "error");
-      }
-    });
-  })();
-</script>

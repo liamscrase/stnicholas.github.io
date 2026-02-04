@@ -24,7 +24,7 @@ const { Content } = await post.render();
     <div class="content">
       <div class="post-hero">
         <img
-          src={post.data.image?.replace(/^\/public/, '') || '/images/cross.svg'}
+          src={post.data.image || '/images/cross.svg'}
           alt={post.data.title}
           class="post-hero-image"
         />

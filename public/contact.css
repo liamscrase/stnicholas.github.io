@@ -1,127 +1,61 @@
-.contact-options {
-  display: flex;
-  flex-direction: column-reverse;
-}
-.contact-options .call {
-  min-width: 223px;
+.contact-container {
+  max-width: 600px;
+  margin: 2rem auto 0;
 }
 
-p {
-  margin-bottom: 46px;
-}
-
-.contact-form {
-  max-width: 720px;
-  display: block;
-  background: var(--white);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-}
-.contact-form label {
-  display: block;
-  font-family: "Zalando Sans";
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 32px;
-}
-.contact-form .field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  margin-top: 6px;
-  padding: 12px 14px;
-  border: 1px solid var(--border-color-dark);
-  border-radius: 4px;
-  background: var(--beige);
+.contact-intro {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
   color: var(--black);
-  font-family: inherit;
-  font-size: 14px;
-  resize: vertical;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.08s ease;
 }
-.contact-form textarea {
-  min-height: 160px;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--red);
-  box-shadow: 0 6px 18px rgba(154, 52, 55, 0.06);
-  transform: translateY(-1px);
+
+.contact-person,
+.church-address {
   background: var(--white);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
 }
-.contact-form.contact-sent {
-  opacity: 0.75;
-  pointer-events: none;
-  filter: grayscale(0.02);
-  transition: opacity 0.3s ease;
+.contact-person h3,
+.church-address h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--black);
+  font-size: 1.35rem;
 }
-@media (min-width: 800px) {
-  .contact-form {
-    gap: 18px;
-    padding: 28px;
+@media (max-width: 768px) {
+  .contact-person h3,
+  .church-address h3 {
+    font-size: 1.2rem;
   }
 }
-
-/* Result / feedback */
-#contact-result {
+.contact-person p,
+.church-address p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+.contact-person strong,
+.church-address strong {
   display: inline-block;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin-top: 32px;
-  transition: all 0.25s ease;
-  opacity: 0;
-  transform: translateY(6px);
+  min-width: 80px;
+  color: var(--off-black);
 }
-
-#contact-result.show {
-  opacity: 1;
-  transform: translateY(0);
+.contact-person a,
+.church-address a {
+  color: var(--red);
+  text-decoration: none;
+  transition: color 0.2s;
 }
-
-#contact-result.success {
-  background: #e8fbef;
-  color: #0f864e;
-  border: 1px solid rgba(15, 134, 78, 0.12);
-  box-shadow: 0 8px 20px rgba(15, 134, 78, 0.06);
+.contact-person a:hover,
+.church-address a:hover {
+  color: var(--black);
+  text-decoration: underline;
 }
-
-#contact-result.error {
-  background: #fff0f0;
-  color: #8a1f1f;
-  border: 1px solid rgba(138, 31, 31, 0.12);
-  box-shadow: 0 8px 20px rgba(138, 31, 31, 0.04);
-}
-
-#contact-result .result-details {
-  margin-top: 8px;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-#contact-result .result-details p {
-  margin: 6px 0;
-}
-
-#contact-result .result-details strong {
-  font-weight: 700;
-  margin-right: 6px;
-}
-
-@media (min-width: 800px) {
-  .contact-options {
-    flex-direction: row;
-    gap: 80px;
-    justify-content: space-between;
-  }
-  .contact-options .contact-form-wrapper {
-    width: 70%;
+@media (max-width: 768px) {
+  .contact-person,
+  .church-address {
+    padding: 1rem;
   }
 }/*# sourceMappingURL=contact.css.map */
