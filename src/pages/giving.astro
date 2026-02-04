@@ -5,7 +5,29 @@ import PageH1 from "../components/PageH1.astro";
 ---
 
 <Layout title="Giving - St. Nicholas Orthodox Church">
-    <div class="content">
-      <PageH1 title="Giving" subheader="Charity number CC37757"/>
-    </div>
+  <link rel="stylesheet" href="/giving.css" />
+  
+  <div class="content">
+    <PageH1 title="Giving" subheader="Support our Parish through one-off donations, regular payments, or our benevolent fund."/>
+    
+    <div class="giving-container panel-border">
+
+        <div class="account-section">
+        <h3>Bank Account Details</h3>
+        <p><strong>Bank:</strong> ANZ</p>
+        <p><strong>Account Name:</strong> Russian Orthodox Church of St Nicholas</p>
+        <p><strong>Parish fund:</strong> 01 1188 0098576 00</p>
+        <p><strong>Benevolent fund:</strong> 01 1188 0098576 01</p>
+        </div>
+        <div class="tax-section">
+          <h3>Tax Deductible Donations</h3>
+          <p>If you are a New Zealand resident for tax purposes you are eligible to claim a tax refund equaling one-third of your donation to our church.</p>
+          <p>Please add the reference <strong>"DONATION (your SURNAME)"</strong> when making the transfer of funds and we will send you a tax deductible receipt at the end of the tax year.</p>
+        </div>
+        <div class="contact-section">
+          <h3>Other Ways to Help</h3>
+          <p>For the provision of other material donations required by the parish or if you have a special talent and are able to assist our parish, please do not hesitate to contact Fr Valentin</p>
+        </div>
+      </div>
+  </div>
 </Layout>
