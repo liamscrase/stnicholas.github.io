@@ -5,7 +5,7 @@ content:
   - name: posts
     label: Posts
     type: collection
-    path: src/content/posts
+    path: src/pages/posts
     fields:
       - { name: title, label: Title, type: string }
       - { name: layout, type: string, hidden: true, default: post }
