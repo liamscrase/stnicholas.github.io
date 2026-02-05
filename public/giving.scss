@@ -1,11 +1,8 @@
-.giving-container {
-    max-width: 700px;
-    margin: 2rem auto 0;
-    padding: 32px;
-    border-radius: 4px;
+.giving-panel {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding: 32px;
 
     h3 {
         margin-top: 0;
@@ -34,7 +31,7 @@
         color: var(--black);
     }
 
-    @media (max-width: 768px) {
-        padding: 20px;
+    @media (min-width: 800px) {
+        padding: 50px;
     }
 }

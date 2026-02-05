@@ -7,8 +7,8 @@ html {
   --off-black: #6f6963;
   --white: #fffcf7;
   --off-white: #FDF8EF;
-  --border-color: #d7d1c5;
-  --border-color-dark: #bfb6a6;
+  --border-color: #B0ACA8;
+  --border-color-dark: #9d9791;
   --red: #8b2635;
   --beige: #f0ebe1;
 }
@@ -127,7 +127,7 @@ ul {
 
 .page-header {
   text-align: center;
-  margin: auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,27 +176,6 @@ ul {
   position: absolute;
   right: 15%;
 }
-
-  .panel-border{
-    position: relative;
-    border: 36px solid transparent; /* control the offset of the lines */
-    outline: 1px solid #b0aca8; /* adjust the 2px here */
-    outline-offset: -18px; /* control the offset of the rectangle */
-    background: conic-gradient(
-        from 90deg at 1px 1px,
-        #0000 25%,
-        #b0aca8 0
-      );
-    
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      background-color: var(--white);
-      z-index: -1;
-    }
-  }
-
 
 // Desktop styles
 @media (min-width: 800px) {

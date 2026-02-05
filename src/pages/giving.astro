@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
+import Panel from "../components/Panel.astro";
 
 ---
 
@@ -9,8 +10,9 @@ import PageH1 from "../components/PageH1.astro";
   
   <div class="content">
     <PageH1 title="Giving" subheader="Support our Parish through one-off donations, regular payments, or our benevolent fund."/>
-    
-    <div class="giving-container panel-border">
+
+    <Panel>
+      <div class="giving-panel">
 
         <div class="account-section">
         <h3>Bank Account Details</h3>
@@ -29,5 +31,7 @@ import PageH1 from "../components/PageH1.astro";
           <p>For the provision of other material donations required by the parish or if you have a special talent and are able to assist our parish, please do not hesitate to contact Fr Valentin</p>
         </div>
       </div>
+      
+    </Panel>
   </div>
 </Layout>

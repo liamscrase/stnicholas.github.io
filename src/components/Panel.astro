@@ -1,0 +1,56 @@
+---
+
+---
+
+<div class="panel">
+  <div class="panel-bg"></div>
+  <slot />
+</div>
+
+
+<style>
+  .panel {
+  position: relative;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 10px;
+  max-width: 700px;
+  margin: auto;
+}
+  .panel-bg {
+  position: absolute;
+  content: '';
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  top: 10px;
+  bottom: 0px;
+  left: 10px;
+  right: 0px;
+  background-color: var(--white);
+  z-index: -1;
+}
+
+.panel:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 9px;
+  right: 9px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.panel:after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  bottom: 9px;
+  left: -10px;
+  right: -10px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+</style>
