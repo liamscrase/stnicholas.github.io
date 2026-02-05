@@ -1,6 +1,5 @@
 ---
 title: Feast of the Nativity at St. Nicholas
-layout: post
 date: 2026-01-28
 comments: true
 description: The Great Blessing of the Waters
