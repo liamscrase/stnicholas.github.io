@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Panel from "../../components/Panel.astro";
+import { getCollection } from "astro:content";
+import PageH1 from "../../components/PageH1.astro";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("posts");
+  const sortedPosts = allPosts.sort((a, b) => {
+    const dateA = a.data.date?.getTime() ?? 0;
+    const dateB = b.data.date?.getTime() ?? 0;
+    return dateB - dateA;
+  });
+
+  return paginate(sortedPosts, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+type Props = {
+  page: Page<CollectionEntry<"posts">>;
+};
+
+const { page } = Astro.props;
+---
+
+<style>
+  @import url("/posts.css");
+</style>
+
+<Layout title="Parish Life - St. Nicholas Orthodox Church">
+  <div class="content">
+    <PageH1 title="Parish Life" subheader="See what's been happening recently in the Parish" />
+      <div class="posts-grid">
+        {
+          page.data.map((post) => (
+            <a
+              href={`/posts/${post.slug}`}
+              class="post-card"
+              aria-label={`Read more about ${post.data.title}`}
+            >
+              <img
+                src={post.data.image || "/images/cross.svg"}
+                alt={post.data.title}
+                class="post-hero-image"
+              />
+              <div class="post-card-content">
+                <h2>{post.data.title}</h2>
+                {post.data.date && (
+                  <p class="post-date">{post.data.date.toDateString()}</p>
+                )}
+                <p>{post.data.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      {page.lastPage > 1 && (
+        <nav class="pagination" aria-label="Pagination">
+          {page.url.prev && (
+            <a href={page.url.prev} class="button tertiary small pagination-link">
+              ← Previous
+            </a>
+          )}
+
+          <span class="pagination-info">
+            Page {page.currentPage} of {page.lastPage}
+          </span>
+
+          {page.url.next && (
+            <a href={page.url.next} class="button tertiary small pagination-link">
+              Next →
+            </a>
+          )}
+        </nav>
+      )}
+  </div>
+</Layout>

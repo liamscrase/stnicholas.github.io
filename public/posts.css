@@ -1,22 +1,21 @@
 .posts-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 auto 2rem;
+  max-width: 800px;
 }
 
 .post-card {
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  background-color: var(--white);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.post-card:hover h2,
+.post-card:hover p {
+  color: var(--red);
 }
 .post-card .post-hero-image {
   width: 100%;
@@ -38,7 +37,7 @@
   flex: 1;
 }
 .post-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -50,34 +49,47 @@
 }
 .post-card .post-date {
   color: var(--off-black);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   margin-bottom: 0.5rem;
 }
 .post-card p {
   color: var(--off-black);
   line-height: 1.6;
+  font-size: 0.9rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@media (min-width: 800px) {
-  .post-card {
-    flex-direction: row;
-    gap: 1.5rem;
-    padding: 1.5rem;
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 50px 0;
+}
+
+.pagination-info {
+  color: var(--off-black);
+}
+
+@media (min-width: 600px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .post-card .post-hero-image {
-    width: 250px;
-    height: 200px;
-    flex-shrink: 0;
-    margin-bottom: 0;
+}
+@media (min-width: 1000px) {
+  .posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
-  .post-card .post-hero-image[src*="cross.svg"] {
-    width: 250px;
-    height: 200px;
+  .post-card h2 {
+    font-size: 1.375rem;
+  }
+  .post-card p {
+    font-size: 0.9375rem;
   }
 }/*# sourceMappingURL=posts.css.map */

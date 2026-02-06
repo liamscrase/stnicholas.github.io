@@ -1,29 +1,12 @@
+.content {
+    margin-bottom: 50px;
+}
+
 .giving-panel {
     display: flex;
     flex-direction: column;
     gap: 50px;
     padding: 32px;
-
-    h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: var(--black);
-        font-size: 1.35rem;
-
-        @media (max-width: 768px) {
-            font-size: 1.2rem;
-        }
-    }
-
-    p {
-        margin: 0.5rem 0;
-        line-height: 1.6;
-        color: var(--off-black);
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
 
     strong {
         display: inline-block;

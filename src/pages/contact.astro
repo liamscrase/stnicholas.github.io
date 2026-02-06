@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
+import Panel from "../components/Panel.astro";
 ---
 
 <Layout title="Contact - St. Nicholas Orthodox Church">
@@ -11,26 +12,28 @@ import PageH1 from "../components/PageH1.astro";
       title="Contact"
       subheader="If you have questions or catering enquiries, drop us a message or give us a ring."
     />
-    
-    <div class="contact-container">
-      <div class="contact-person">
-        <h3>Father Valentin Basiuk</h3>
-        <p><strong>Ph:</strong> <a href="tel:033320514">03 332 0514</a></p>
-        <p><strong>Mobile:</strong> <a href="tel:0279038343">027 903 8343</a></p>
-        <p><strong>Email:</strong> <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a></p>
-      </div>
+    <Panel>
       
-      <div class="contact-person">
-        <h3>Deacon Vladimir Filipovich, Church Warden</h3>
-        <p><strong>Ph:</strong> <a href="tel:033588816">03 358 8816</a></p>
-        <p><strong>Mobile:</strong> <a href="tel:0210306703">021 030 6703</a></p>
-        <p><strong>Email:</strong> <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a></p>
+      <div class="contact-container">
+        <div class="contact-person">
+          <h3>Father Valentin Basiuk</h3>
+          <p><strong>Ph:</strong> <a href="tel:033320514">03 332 0514</a></p>
+          <p><strong>Mobile:</strong> <a href="tel:0279038343">027 903 8343</a></p>
+          <p><strong>Email:</strong> <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a></p>
+        </div>
+        
+        <div class="contact-person">
+          <h3>Deacon Vladimir Filipovich, Church Warden</h3>
+          <p><strong>Ph:</strong> <a href="tel:033588816">03 358 8816</a></p>
+          <p><strong>Mobile:</strong> <a href="tel:0210306703">021 030 6703</a></p>
+          <p><strong>Email:</strong> <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a></p>
+        </div>
+        
+        <div class="church-address">
+          <h3>Church Address</h3>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=297+Brougham+Street+Christchurch" target="_blank" rel="noopener noreferrer">297 Brougham Street, Christchurch</a></p>
+        </div>
       </div>
-      
-      <div class="church-address">
-        <h3>Church Address</h3>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=297+Brougham+Street+Christchurch" target="_blank" rel="noopener noreferrer">297 Brougham Street, Christchurch</a></p>
-      </div>
-    </div>
+    </Panel>
   </div>
 </Layout>

@@ -3,94 +3,83 @@
 // ====================
 
 .library-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40PX;
+  margin: 50px auto 0;
+  max-width: 800px;
 }
 
-.library-section {
-  margin-bottom: 60px;
 
-  &:last-child {
-    margin-bottom: 0;
+.library-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+
+  img {
+    width: 100%;
+    display: block;
+    height: 120px;
+    margin-bottom: 20px;
   }
 }
 
-.section-title {
-  font-family: "Noto Serif", serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--off-black);
+h2 {
+  text-align: center;
+  margin-bottom: 45px;
+
+}
+
+h3 {
   margin-bottom: 16px;
-  padding-bottom: 12px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .pdf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.pdf-card {
-  background-color: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.3s ease;
+  gap: 48px;
 }
 
-.pdf-title {
-  font-family: "Noto Serif", serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--black);
-  margin-bottom: 20px;
-  line-height: 1.3;
-  min-height: 48px;
+
+
+.pdf-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    .pdf-title {
+      color: var(--red);
+    }
+  }
 }
+
 
 .pdf-actions {
   display: flex;
   gap: 12px;
-  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 // ====================
 // Responsive Design
-// ====================
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 24px;
-  }
+// ===================
 
-  .pdf-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-  }
-
-  .pdf-card {
-    padding: 20px;
-  }
-
-  .pdf-title {
-    font-size: 16px;
-    min-height: 40px;
-  }
-
-  .pdf-actions {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pdf-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 800px) {
+  .library-container {
+    flex-direction: row;
   }
 }

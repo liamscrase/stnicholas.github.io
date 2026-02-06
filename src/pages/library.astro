@@ -1,13 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
+import Panel from "../components/Panel.astro";
 
 const musicPdfs = [
   { name: "Book No. 1 - Oktoechos", file: "Book No. 1 - Oktoechos.pdf" },
-  { name: "Book No. 2 (I) - The 12 Great Feasts", file: "Book No. 2 (I) - The 12 Great Feasts.pdf" },
-  { name: "Book No. 2 (II) - The 12 Great Feasts", file: "Book No. 2 (II) - The 12 Great Feasts.pdf" },
+  {
+    name: "Book No. 2 (I) - The 12 Great Feasts",
+    file: "Book No. 2 (I) - The 12 Great Feasts.pdf",
+  },
+  {
+    name: "Book No. 2 (II) - The 12 Great Feasts",
+    file: "Book No. 2 (II) - The 12 Great Feasts.pdf",
+  },
   { name: "Book No. 3 - Vigil", file: "Book No. 3 - Vigil.pdf" },
-  { name: "Book No. 4 Part I - Liturgy", file: "Book No. 4 Part I - Liturgy.pdf" },
+  {
+    name: "Book No. 4 Part I - Liturgy",
+    file: "Book No. 4 Part I - Liturgy.pdf",
+  },
 ];
 
 const serviceTextsPdfs = [
@@ -21,38 +31,69 @@ const serviceTextsPdfs = [
   <link rel="stylesheet" href="/library.css" />
 
   <div class="content">
-    <PageH1 title="Library" subheader=""/>
-
+    <PageH1
+      title="Library"
+      subheader="Discover our collection of service texts and music. Feel free to download or view them for personal use."
+    />
     <div class="library-container">
-      <!-- Music Section -->
       <section class="library-section">
+        <img src="/images/line-art/gospel.svg" alt="" />
         <h2 class="section-title">Music</h2>
         <div class="pdf-grid">
-          {musicPdfs.map((pdf) => (
-            <div class="pdf-card">
-              <h3 class="pdf-title">{pdf.name}</h3>
-              <div class="pdf-actions">
-                <a href={`/music/${pdf.file}`} target="_blank" class="button primary large">View</a>
-                <a href={`/music/${pdf.file}`} download class="button secondary large">Download</a>
+          {
+            musicPdfs.map((pdf) => (
+              <div class="pdf-card">
+                <h3 class="pdf-title">{pdf.name}</h3>
+                <div class="pdf-actions">
+                  <a
+                    href={`/music/${pdf.file}`}
+                    target="_blank"
+                    class="button primary small"
+                  >
+                    View
+                  </a>
+                  <a
+                    href={`/music/${pdf.file}`}
+                    download
+                    class="button secondary small"
+                  >
+                    Download
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </section>
-
       <!-- Service Texts Section -->
       <section class="library-section">
+        <img src="/images/line-art/gospel.svg" alt="" />
+
         <h2 class="section-title">Service Texts</h2>
         <div class="pdf-grid">
-          {serviceTextsPdfs.map((pdf) => (
-            <div class="pdf-card">
-              <h3 class="pdf-title">{pdf.name}</h3>
-              <div class="pdf-actions">
-                <a href={`/service-texts/${pdf.file}`} target="_blank" class="button primary large">View</a>
-                <a href={`/service-texts/${pdf.file}`} download class="button secondary large">Download</a>
+          {
+            serviceTextsPdfs.map((pdf) => (
+              <div class="pdf-card">
+                <h3 class="pdf-title">{pdf.name}</h3>
+                <div class="pdf-actions">
+                  <a
+                    href={`/service-texts/${pdf.file}`}
+                    target="_blank"
+                    class="button primary small"
+                  >
+                    View
+                  </a>
+                  <a
+                    href={`/service-texts/${pdf.file}`}
+                    download
+                    class="button secondary small"
+                  >
+                    Download
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </section>
     </div>

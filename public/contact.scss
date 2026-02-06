@@ -1,38 +1,13 @@
+.content {
+    margin-bottom: 50px;
+}
+
 .contact-container {
-  max-width: 700px;
-  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 32px;
 }
-
-.contact-intro {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--black);
-}
-
-.contact-person,
-.church-address {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
-
-  h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--black);
-    font-size: 1.35rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.2rem;
-    }
-  }
-
-  p {
-    margin: 0.5rem 0;
-    line-height: 1.6;
-  }
 
   strong {
     display: inline-block;
@@ -51,7 +26,8 @@
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 1rem;
+  @media (min-width: 800px) {
+    .contact-container {
+      padding: 50px;
+    }
   }
-}

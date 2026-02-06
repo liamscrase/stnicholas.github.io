@@ -1,61 +1,32 @@
+.content {
+  margin-bottom: 50px;
+}
+
 .contact-container {
-  max-width: 700px;
-  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 32px;
 }
 
-.contact-intro {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--black);
-}
-
-.contact-person,
-.church-address {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
-}
-.contact-person h3,
-.church-address h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: var(--black);
-  font-size: 1.35rem;
-}
-@media (max-width: 768px) {
-  .contact-person h3,
-  .church-address h3 {
-    font-size: 1.2rem;
-  }
-}
-.contact-person p,
-.church-address p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
-}
-.contact-person strong,
-.church-address strong {
+strong {
   display: inline-block;
   min-width: 80px;
   color: var(--off-black);
 }
-.contact-person a,
-.church-address a {
+
+a {
   color: var(--red);
   text-decoration: none;
   transition: color 0.2s;
 }
-.contact-person a:hover,
-.church-address a:hover {
+a:hover {
   color: var(--black);
   text-decoration: underline;
 }
-@media (max-width: 768px) {
-  .contact-person,
-  .church-address {
-    padding: 1rem;
+
+@media (min-width: 800px) {
+  .contact-container {
+    padding: 50px;
   }
 }/*# sourceMappingURL=contact.css.map */

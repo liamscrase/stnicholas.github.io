@@ -4,6 +4,10 @@
 
 <div class="panel">
   <div class="panel-bg"></div>
+  <div class="diamond top-left"></div>
+  <div class="diamond top-right"></div>
+  <div class="diamond bottom-left"></div>
+  <div class="diamond bottom-right"></div>
   <slot />
 </div>
 
@@ -11,12 +15,12 @@
 <style>
   .panel {
   position: relative;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--off-black);
   width: 100%;
   height: 100%;
   margin: auto;
   padding: 10px;
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
 }
   .panel-bg {
@@ -25,20 +29,52 @@
   height: calc(100% - 20px);
   width: calc(100% - 20px);
   top: 10px;
-  bottom: 0px;
+  bottom: 10px;
   left: 10px;
-  right: 0px;
+  right: 10px;
   background-color: var(--white);
-  z-index: -1;
+  z-index: -2;
+  border: 1px solid var(--off-black);
 }
 
-.panel:before {
+  .diamond {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--off-white);
+    border: 1px solid var(--off-black);
+    transform: rotate(45deg);
+    z-index: 3;
+  }
+
+  .diamond.top-left {
+    top: -4px;
+    left: -4px;
+  }
+
+  .diamond.top-right {
+    top: -4px;
+    right: -4px;
+  }
+
+  .diamond.bottom-left {
+    bottom: -4px;
+    left: -4px;
+  }
+
+  .diamond.bottom-right {
+    bottom: -4px;
+    right: -4px;
+  }
+
+
+/* .panel:before {
   content: '';
   position: absolute;
   top: -10px;
   bottom: -10px;
-  left: 9px;
-  right: 9px;
+  left: 10px;
+  right: 10px;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
   z-index: -1;
@@ -47,12 +83,12 @@
 .panel:after {
   content: '';
   position: absolute;
-  top: 9px;
-  bottom: 9px;
+  top: 10px;
+  bottom: 10px;
   left: -10px;
   right: -10px;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   z-index: -1;
-}
+} */
 </style>

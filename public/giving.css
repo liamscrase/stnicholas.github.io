@@ -1,27 +1,12 @@
+.content {
+  margin-bottom: 50px;
+}
+
 .giving-panel {
   display: flex;
   flex-direction: column;
   gap: 50px;
   padding: 32px;
-}
-.giving-panel h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: var(--black);
-  font-size: 1.35rem;
-}
-@media (max-width: 768px) {
-  .giving-panel h3 {
-    font-size: 1.2rem;
-  }
-}
-.giving-panel p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
-  color: var(--off-black);
-}
-.giving-panel p:last-child {
-  margin-bottom: 0;
 }
 .giving-panel strong {
   display: inline-block;

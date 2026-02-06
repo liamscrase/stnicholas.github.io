@@ -5,11 +5,16 @@ const { currentPath } = Astro.props;
 
 <nav class="desktop-navbar">
   <div class="desktop-navbar-container">
-    <a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
-    <div class="nav-links">
+        <div class="nav-links">
       <ul>
+        <li><a href="/">Home</a></li>
         <li><a href="/schedule/">Schedule</a></li>
         <li><a href="/parish-life/">Parish Life</a></li>
+      </ul>
+    </div>
+    <a href="/"><img class="logo" src="/images/logo.svg" alt="St. Nicholas Logo" /></a>
+    <div class="nav-links">
+      <ul>
         <li><a href="/library/">Library</a></li>
         <li><a href="/giving/">Giving</a></li>
         <li><a href="/contact/">Contact</a></li>
@@ -21,7 +26,7 @@ const { currentPath } = Astro.props;
 <nav class="mobile-navbar">
   <input type="checkbox" id="menu-toggle" class="menu-toggle" />
   <div class="mobile-navbar-container">
-    <a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
+    <a href="/"><img class="logo" src="/images/logo-mobile.svg" alt="St. Nicholas Logo" /></a>
     <label for="menu-toggle" class="hamburger">
       <span></span>
       <span></span>
@@ -43,7 +48,7 @@ const { currentPath } = Astro.props;
   <label for="menu-toggle" class="offcanvas-backdrop"></label>
 </nav>
 
-<script>
+<!-- <script>
   const navs = document.querySelectorAll('nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -52,4 +57,4 @@ const { currentPath } = Astro.props;
       navs.forEach(nav => nav.classList.remove('scrolled'));
     }
   });
-</script>
+</script> -->
