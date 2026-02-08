@@ -1,11 +1,3 @@
-.posts-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin: 0 auto 2rem;
-  max-width: 800px;
-}
-
 .post-card {
   text-decoration: none;
   color: inherit;
@@ -19,7 +11,7 @@
 }
 .post-card .post-hero-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 4px;
@@ -30,7 +22,7 @@
      object-fit: contain;
   background-color: var(--beige);
   width: 100%;
-  height: 200px;
+  height: 250px;
   padding: 50px 0;
 }
 .post-card .post-card-content {
@@ -74,22 +66,4 @@
 
 .pagination-info {
   color: var(--off-black);
-}
-
-@media (min-width: 600px) {
-  .posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1000px) {
-  .posts-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  .post-card h2 {
-    font-size: 1.375rem;
-  }
-  .post-card p {
-    font-size: 0.9375rem;
-  }
 }/*# sourceMappingURL=posts.css.map */

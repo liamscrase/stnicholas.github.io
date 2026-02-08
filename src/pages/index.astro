@@ -23,26 +23,30 @@ import Panel from "../components/Panel.astro";
   
   <!-- Service Highlights Section -->
   <div class="content">
+
     <section class="welcome-section">
-      <h1>Welcome to St. Nicholas Orthodox Church</h1>
-      <p style="text-align: center; margin: 0 auto 32px;">
-        Experience the ancient beauty and timeless tradition of Orthodox Christian worship. 
-        Our parish family welcomes all who seek to grow in faith, participate in the sacraments, 
-        and join a community devoted to Christ and His teachings.
-      </p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <!-- Links to /schedule page -->
+      <div class="text-container">
+        <h1>Welcome to St. Nicholas Orthodox Church</h1>
+        <p>
+          Experience the ancient beauty and timeless tradition of Orthodox Christian worship. 
+          Our parish family welcomes all who seek to grow in faith, participate in the sacraments, 
+          and join a community devoted to Christ and His teachings.
+        </p>
+      </div>
+      <div class="button-container">
         <a href="/schedule" class="button primary large">View Service Times</a>
-        <!-- Links to /parish-life page -->
         <a href="/parish-life" class="button secondary large">Parish Life</a>
       </div>
     </section>
+
     <section class="service-highlights">
-      <h2>Join Us for Worship</h2>
-      <p style="text-align: center; margin: 0 auto 40px; max-width: 700px;">
-        All are welcome to attend our services and experience the reverence and beauty 
-        of the Divine Liturgy in the Orthodox tradition.
-      </p>
+      <div class="text-container">
+        <h2>Join Us for Worship</h2>
+        <p>
+          All are welcome to attend our services and experience the reverence and beauty 
+          of the Divine Liturgy in the Orthodox tradition.
+        </p>
+      </div>
       <div class="grid-2-col">
         <div class="grid-card">
           <img 
@@ -71,17 +75,20 @@ import Panel from "../components/Panel.astro";
           </p>
         </div>
       </div>
-      <div style="display: flex; justify-content: center; margin-top: 32px;">
-        <!-- Links to /schedule page -->
-        <a href="/schedule" class="button secondary medium">View Full Schedule</a>
+      <div class="button-container">
+        <a href="/schedule" class="button primary large">View Full Schedule</a>
       </div>
     </section>
+
     <section class="recent-updates">
-      <h2>Parish Life & Celebrations</h2>
-      <p style="text-align: center; margin: 0 auto 40px; max-width: 700px;">
-        Experience the richness of Orthodox tradition through our feast days, 
-        celebrations, and community gatherings throughout the liturgical year.
-      </p>
+      <div class="text-container">
+
+        <h2>Parish Life & Celebrations</h2>
+        <p>
+          Experience the richness of Orthodox tradition through our feast days, 
+          celebrations, and community gatherings throughout the liturgical year.
+        </p>
+      </div>
       <Panel>
         <div class="parish-panel">
           <div class="parish-section">
@@ -101,14 +108,16 @@ import Panel from "../components/Panel.astro";
             </p>
           </div>
           <div class="button-container">
-            <!-- Links to /parish-life page -->
-            <a href="/parish-life" class="button primary medium">Explore Parish Life</a>
+            <a href="/parish-life" class="button primary large">Explore Parish Life</a>
           </div>
         </div>
       </Panel>
     </section>
     <section class="resources-section">
-      <h2>Resources for Your Faith Journey</h2>
+      <div class="text-container">
+
+        <h2>Resources for Your Faith Journey</h2>
+      </div>
       <div class="grid-3-col">
         <div class="grid-card">
           <img 
@@ -122,7 +131,7 @@ import Panel from "../components/Panel.astro";
             for prayer and study.
           </p>
           <!-- Links to /library page -->
-          <a href="/library" class="button secondary medium">Browse Library</a>
+          <a href="/library" class="button secondary large">Browse Library</a>
         </div>
         <div class="grid-card">
           <img 
@@ -136,7 +145,7 @@ import Panel from "../components/Panel.astro";
             to serve our community and glorify God.
           </p>
           <!-- Links to /giving page -->
-          <a href="/giving" class="button secondary medium">Ways to Give</a>
+          <a href="/giving" class="button secondary large">Ways to Give</a>
         </div>
         <div class="grid-card">
           <img 
@@ -150,7 +159,7 @@ import Panel from "../components/Panel.astro";
             and welcome you to our parish family.
           </p>
           <!-- Links to /contact page -->
-          <a href="/contact" class="button secondary medium">Contact Us</a>
+          <a href="/contact" class="button secondary large">Contact Us</a>
         </div>
       </div>
     </section>

@@ -11,20 +11,22 @@ import PageH1 from "../components/PageH1.astro";
       subheader="Join us for our weekly services at St. Nicholas Orthodox Church. All are welcome to attend and experience the beauty of Orthodox worship."
     />
 
-    <div class="regular-schedule">
-      <div class="service">
-        <div class="image-container">
-          <img src="/images/line-art/christ.svg" alt="vespers" />
-        </div>
+    <div class="grid-2-col-narrow">
+      <div class="grid-card">
+        <img class="line-art" src="/images/line-art/christ.svg" alt="vespers" />
+
         <div class="inner">
           <h2>Evening service</h2>
           <p>Saturdays at 7:00 PM</p>
         </div>
       </div>
-      <div class="service">
-        <div class="image-container">
-          <img src="/images/line-art/chalice.svg" alt="liturgy" />
-        </div>
+      <div class="grid-card">
+        <img
+          class="line-art"
+          src="/images/line-art/chalice.svg"
+          alt="liturgy"
+        />
+
         <div class="inner">
           <h2>Divine Liturgy</h2>
           <p>Sundays at 9:00 AM</p>
