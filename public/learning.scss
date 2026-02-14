@@ -1,0 +1,21 @@
+// ====================
+// Learning Page Styles
+// ====================
+
+// Page-specific styles (if any needed)
+// Most styles come from general.scss grid-3-col
+
+.resource-type {
+  font-size: 0.875rem;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.grid-card {
+  a {
+    margin-top: auto;
+    min-width: 100px;
+    text-align: center;
+  }
+}

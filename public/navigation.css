@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .desktop-navbar {
   width: 100%;
   display: none;
@@ -40,6 +41,7 @@
 .desktop-navbar .desktop-navbar-container .nav-links ul li {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .desktop-navbar .desktop-navbar-container .nav-links ul li a {
   text-decoration: none;
@@ -50,9 +52,61 @@
   font-weight: 500;
   font-family: "PT Serif", serif;
   transition: opacity 0.3s ease;
+  padding: 12px 0;
 }
 .desktop-navbar .desktop-navbar-container .nav-links ul li a:hover {
   opacity: 0.7;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown {
+  position: relative;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-toggle::after {
+  content: "▾";
+  margin-left: 4px;
+  font-size: 12px;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-menu {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-menu li a {
+  display: block;
+  padding: 12px;
+  white-space: nowrap;
+  width: 100%;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown .dropdown-menu li a:hover {
+  background: var(--beige);
+  opacity: 1;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul li.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-navbar {

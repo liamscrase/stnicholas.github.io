@@ -1,0 +1,28 @@
+.music-item {
+  border-top: 1px solid var(--off-black);
+  padding-top: 40px;
+  position: relative;
+}
+.music-item::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: var(--off-white);
+  border: 1px solid var(--off-black);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+
+.pdf-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pdf-actions a {
+  min-width: 90px;
+}/*# sourceMappingURL=music.css.map */

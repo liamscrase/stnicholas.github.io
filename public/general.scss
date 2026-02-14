@@ -90,6 +90,8 @@ ul {
   cursor: pointer;
   transition: all 0.3s ease;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   gap: 4px;
 
   &.primary {
@@ -205,10 +207,6 @@ ul {
   p {
     margin: 0 auto 16px;
     text-align: center;
-  }
-
-  a {
-    margin-top: 20px;
   }
 }
 

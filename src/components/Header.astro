@@ -5,7 +5,7 @@ const { currentPath } = Astro.props;
 
 <nav class="desktop-navbar">
   <div class="desktop-navbar-container">
-        <div class="nav-links">
+    <div class="nav-links">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/schedule/">Schedule</a></li>
@@ -15,7 +15,14 @@ const { currentPath } = Astro.props;
     <a href="/"><img class="logo" src="/images/logo.svg" alt="St. Nicholas Logo" /></a>
     <div class="nav-links">
       <ul>
-        <li><a href="/library/">Library</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Library</a>
+          <ul class="dropdown-menu">
+            <li><a href="/library/music/">Music</a></li>
+            <li><a href="/library/service-texts/">Service Texts</a></li>
+            <li><a href="/library/learning/">Learning</a></li>
+          </ul>
+        </li>
         <li><a href="/giving/">Giving</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
@@ -39,7 +46,9 @@ const { currentPath } = Astro.props;
         <li><a href="/">Home</a></li>
         <li><a href="/schedule/">Schedule</a></li>
         <li><a href="/parish-life/">Parish Life</a></li>
-        <li><a href="/library/">Library</a></li>
+        <li><a href="/library/music/">Music</a></li>
+        <li><a href="/library/service-texts/">Service Texts</a></li>
+        <li><a href="/library/learning/">Learning</a></li>
         <li><a href="/giving/">Giving</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>

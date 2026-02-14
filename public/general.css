@@ -85,6 +85,8 @@ ul {
   cursor: pointer;
   transition: all 0.3s ease;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   gap: 4px;
 }
 .button.primary {
@@ -186,9 +188,6 @@ ul {
 .grid-card p {
   margin: 0 auto 16px;
   text-align: center;
-}
-.grid-card a {
-  margin-top: 20px;
 }
 
 @media (min-width: 800px) {
