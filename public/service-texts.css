@@ -1,5 +1,5 @@
 .service-text-item {
-  border-top: 1px solid var(--off-black);
+  border-top: 1px solid var(--border-color-dark);
   padding-top: 40px;
   position: relative;
 }
@@ -11,7 +11,7 @@
   width: 8px;
   height: 8px;
   background-color: var(--off-white);
-  border: 1px solid var(--off-black);
+  border: 1px solid var(--border-color-dark);
   transform: translateX(-50%) rotate(45deg);
   z-index: 1;
 }
