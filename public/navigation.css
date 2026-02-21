@@ -245,6 +245,9 @@ footer {
   color: var(--white);
   text-align: center;
 }
+footer h2 {
+  margin-bottom: 24px;
+}
 footer .content {
   padding: 50px 20px;
   z-index: 2;
@@ -256,6 +259,7 @@ footer .google-map {
 }
 footer .google-map iframe {
   border-radius: 12px;
+  background-color: var(--beige);
 }
 footer .links {
   display: flex;

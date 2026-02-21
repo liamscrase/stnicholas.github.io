@@ -290,6 +290,10 @@ footer {
   color: var(--white);
   text-align: center;
 
+  h2 {
+    margin-bottom: 24px;
+  }
+
   .content {
     padding: 50px 20px;
     z-index: 2;
@@ -302,6 +306,7 @@ footer {
 
     iframe {
       border-radius: 12px;
+      background-color: var(--beige);
     }
   }
 

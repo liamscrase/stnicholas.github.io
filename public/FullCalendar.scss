@@ -37,21 +37,23 @@
   letter-spacing: 0.03em;
 }
 
+.fc .fc-daygrid-day-top {
+  padding: 4px !important;
+}
 .fc .fc-button {
   font-family: "PT Serif", serif;
   background: var(--white) !important;
   border: 1px solid var(--border-color) !important;
   color: var(--off-black) !important;
-  border-radius: 6px !important;
   font-size: 0.8rem !important;
   padding: 0.3rem 0.7rem !important;
   box-shadow: none !important;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: all 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 
   &:hover,
   &:focus-visible {
     background: var(--beige) !important;
-    border-color: var(--border-color-dark) !important;
+    border-color: var(--border-color) !important;
     color: var(--black) !important;
   }
 }
@@ -59,7 +61,6 @@
 .fc .fc-button-primary:not(:disabled):active,
 .fc .fc-button-primary:not(:disabled).fc-button-active {
   background: var(--beige) !important;
-  border-color: var(--border-color-dark) !important;
   color: var(--black) !important;
   box-shadow: none !important;
 }
@@ -182,18 +183,18 @@
 }
 
 .fc .fc-list-event td {
-  background: var(--white) ;
+  background: var(--white);
   border-color: var(--border-color);
   color: var(--black);
 }
 
 .fc .fc-list-event:hover td {
-  background: var(--beige) ;
+  background: var(--beige);
 }
 
 
 .fc .fc-list-event-dot {
-  border-color: var(--red) ;
+  border-color: var(--red);
   margin-right: 8px !important;
 }
 
@@ -205,7 +206,7 @@
 // }
 
 .fc .fc-list-event-time {
-  color: var(--off-black) ;
+  color: var(--off-black);
   font-size: 0.82rem;
   padding: 16px !important;
   white-space: nowrap;
@@ -272,7 +273,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 // ─── Error ───────────────────────────────────────────────────────────────────
