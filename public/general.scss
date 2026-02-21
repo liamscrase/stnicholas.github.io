@@ -38,6 +38,12 @@ body {
   margin: auto;
   width: 100%;
   padding: 50px 20px;
+
+  &.home {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
 }
 
 h1 {

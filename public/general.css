@@ -36,6 +36,11 @@ body {
   width: 100%;
   padding: 50px 20px;
 }
+.content.home {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
 
 h1 {
   font-family: "PT Serif", serif;
