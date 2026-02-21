@@ -7,7 +7,7 @@ html {
   --off-black: #6f6963;
   --white: #fffcf7;
   --off-white: #FDF8EF;
-  --border-color: #B0ACA8;
+  --border-color: #d4d0cc;
   --border-color-dark: #9d9791;
   --red: #8b2635;
   --beige: #eae6dd;
@@ -34,7 +34,7 @@ body {
   max-width: 1200px;
   margin: auto;
   width: 100%;
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
 
 h1 {
@@ -42,7 +42,7 @@ h1 {
   font-weight: 700;
   font-size: 36px;
   line-height: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -51,18 +51,17 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-family: "PT Serif", serif;
   font-weight: 500;
   font-size: 24px;
-  text-align: center;
 }
 
 h3 {
   font-size: 20px;
   font-family: "PT Serif", serif;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 p {
@@ -141,7 +140,7 @@ ul {
 .grid-3-col {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 48px;
   margin-top: 40px;
 }
 
@@ -155,7 +154,7 @@ ul {
 .grid-2-col-narrow {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 48px;
   margin-top: 40px;
   max-width: 800px;
   margin: auto;
@@ -180,13 +179,9 @@ ul {
   height: 150px;
   -o-object-fit: contain;
      object-fit: contain;
-  margin-top: 32px;
+  margin-top: 8px;
 }
 .grid-card h3 {
-  text-align: center;
-}
-.grid-card p {
-  margin: 0 auto 16px;
   text-align: center;
 }
 
@@ -196,7 +191,6 @@ ul {
   }
   h1 {
     font-size: 40px;
-    margin-bottom: 40px;
   }
   h2 {
     font-size: 28px;
@@ -219,4 +213,36 @@ ul {
   .grid-2-col {
     gap: 48px;
   }
+}
+#fullcalendar *, #fullcalendar *::before, #fullcalendar *::after {
+  box-sizing: content-box;
+  margin: revert;
+  padding: revert;
+}
+#fullcalendar table {
+  display: table;
+  border-collapse: collapse;
+}
+#fullcalendar thead {
+  display: table-header-group;
+}
+#fullcalendar tbody {
+  display: table-row-group;
+}
+#fullcalendar tr {
+  display: table-row;
+}
+#fullcalendar td, #fullcalendar th {
+  display: table-cell;
+}
+
+#fullcalendar .fc-daygrid-day-frame {
+  min-height: 80px !important;
+  height: auto !important;
+}
+#fullcalendar .fc-daygrid-body {
+  height: auto !important;
+}
+#fullcalendar .fc-scrollgrid-sync-table {
+  height: auto !important;
 }/*# sourceMappingURL=general.css.map */

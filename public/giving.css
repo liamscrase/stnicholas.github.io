@@ -1,20 +1,93 @@
-.content {
-  margin-bottom: 50px;
-}
-
-.giving-panel {
+@charset "UTF-8";
+.giving-page {
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 32px;
-}
-.giving-panel strong {
-  display: inline-block;
-  min-width: 140px;
-  color: var(--black);
 }
 @media (min-width: 800px) {
-  .giving-panel {
-    padding: 50px;
+  .giving-page {
+    padding: 44px 40px 52px;
   }
+}
+
+/* ── Section blocks ── */
+.giving-section.last {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.giving-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--off-black, #222);
+  margin: 0 0 12px;
+}
+.giving-section p:last-child {
+  margin-bottom: 0;
+}
+.giving-section p strong {
+  font-weight: 700;
+  color: var(--off-black, #222);
+}
+
+/* ── Section heading ── */
+.section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--off-black, #222);
+  margin: 0 0 20px;
+}
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--red);
+  margin-top: 10px;
+}
+
+/* ── Detail list (bank details) ── */
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.detail-list li {
+  display: flex;
+  align-items: center;
+  padding: 14px 0 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+.detail-list li:last-child {
+  border-bottom: none;
+}
+
+.detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.detail-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--off-black);
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--off-black, #222);
+  font-weight: 500;
+}
+.detail-value.mono {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }/*# sourceMappingURL=giving.css.map */

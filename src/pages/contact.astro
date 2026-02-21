@@ -4,36 +4,89 @@ import PageH1 from "../components/PageH1.astro";
 import Panel from "../components/Panel.astro";
 ---
 
-<Layout title="Contact - St. Nicholas Orthodox Church">
+<Layout title="Contact Us">
   <link rel="stylesheet" href="/contact.css" />
 
   <div class="content">
-    <PageH1
-      title="Contact"
-      subheader="If you have questions or catering enquiries, drop us a message or give us a ring."
-    />
+    <PageH1 title="Contact Us" subheader="" />
     <Panel>
-      
-      <div class="contact-container">
-        <div class="contact-person">
-          <h3>Father Valentin Basiuk</h3>
-          <p><strong>Ph:</strong> <a href="tel:033320514">03 332 0514</a></p>
-          <p><strong>Mobile:</strong> <a href="tel:0279038343">027 903 8343</a></p>
-          <p><strong>Email:</strong> <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a></p>
+       <div class="contact-page">
+        <div class="contact-grid">
+  
+          <div class="contact-card">
+            <div class="card-accent"></div>
+            <div class="card-inner">
+              <div class="role-badge">Priest</div>
+              <h3 class="person-name">Father Valentin Basiuk</h3>
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-icon"><span>Ph</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:033320514">03 332 0514</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-icon"><span>Mb</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Mobile</span>
+                    <a href="tel:0279038343">027 903 8343</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-icon"><span>@</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="contact-card">
+            <div class="card-accent"></div>
+            <div class="card-inner">
+              <div class="role-badge">Deacon &amp; Church Warden</div>
+              <h3 class="person-name">Deacon Vladimir Filipovich</h3>
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-icon"><span>Ph</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:033588816">03 358 8816</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-icon"><span>Mb</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Mobile</span>
+                    <a href="tel:02103006703">021 030 6703</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-icon"><span>@</span></span>
+                  <div class="contact-detail">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
         </div>
-        
-        <div class="contact-person">
-          <h3>Deacon Vladimir Filipovich, Church Warden</h3>
-          <p><strong>Ph:</strong> <a href="tel:033588816">03 358 8816</a></p>
-          <p><strong>Mobile:</strong> <a href="tel:0210306703">021 030 6703</a></p>
-          <p><strong>Email:</strong> <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a></p>
-        </div>
-        
+  
         <div class="church-address">
-          <h3>Church Address</h3>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=297+Brougham+Street+Christchurch" target="_blank" rel="noopener noreferrer">297 Brougham Street, Christchurch</a></p>
+          <div class="address-icon"><span>⊕</span></div>
+          <div>
+            <span class="address-label">Church Address</span>
+            <address>297 Brougham Street, Christchurch</address>
+          </div>
         </div>
       </div>
     </Panel>
+
   </div>
+
 </Layout>

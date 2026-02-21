@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
+import FullCalendar from "../components/FullCalendar.astro";
 ---
 
 <Layout title="Schedule - St. Nicholas Orthodox Church">
   <link rel="stylesheet" href="/schedule.css" />
+  <link rel="stylesheet" href="/FullCalendar.css" />
   <div class="content">
     <PageH1
       title="Schedule"
@@ -16,7 +18,7 @@ import PageH1 from "../components/PageH1.astro";
         <img class="line-art" src="/images/line-art/christ.svg" alt="vespers" />
 
         <div class="inner">
-          <h2>Evening service</h2>
+          <h2 class="service-header">Evening service</h2>
           <p>Saturdays at 7:00 PM</p>
         </div>
       </div>
@@ -28,23 +30,15 @@ import PageH1 from "../components/PageH1.astro";
         />
 
         <div class="inner">
-          <h2>Divine Liturgy</h2>
+          <h2 class="service-header">Divine Liturgy</h2>
           <p>Sundays at 9:00 AM</p>
         </div>
       </div>
     </div>
 
     <div class="calendar-section">
-      <h2>See the full calendar</h2>
-      <div class="iframe-container">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=liamscrase1%40gmail.com&ctz=Pacific%2FAuckland"
-          style="border: 0"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          scrolling="no"></iframe>
-      </div>
+      <h2 class="calendar-header">See the full calendar</h2>
+      <FullCalendar />
     </div>
   </div>
 </Layout>

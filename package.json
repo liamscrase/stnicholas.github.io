@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.20",
+    "@fullcalendar/daygrid": "^6.1.20",
+    "@fullcalendar/interaction": "^6.1.20",
+    "@fullcalendar/list": "^6.1.20",
     "astro": "^5.16.15",
     "sass": "^1.97.3"
   }

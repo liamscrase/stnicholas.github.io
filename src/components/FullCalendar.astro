@@ -1,0 +1,162 @@
+---
+const calendarId = import.meta.env.GOOGLE_CALENDAR_ID ?? "liamscrase1@gmail.com";
+const apiKey = import.meta.env.GOOGLE_CALENDAR_API_KEY ?? "";
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" id="fullcalendar-cdn"></script>
+
+<div class="calendar-wrapper" role="region" aria-label="Event Calendar">
+  <div id="calendar-loading" aria-live="polite" class="calendar-loading">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Loading calendar…</span>
+  </div>
+  <div id="calendar-error" class="calendar-error" style="display:none;" role="alert">
+    <span>⚠️</span>
+    <p id="calendar-error-msg"></p>
+  </div>
+  <div id="fullcalendar" style="visibility:hidden;"></div>
+
+  <dialog id="event-dialog" class="event-dialog">
+    <button class="dialog-close" aria-label="Close" id="dialog-close">✕</button>
+    <h2 class="dialog-title" id="dialog-title"></h2>
+    <p id="dialog-time" class="dialog-time"></p>
+    <p id="dialog-location" class="dialog-location"></p>
+    <p id="dialog-description" class="dialog-description"></p>
+  </dialog>
+</div>
+
+<script is:inline data-calendar-id={calendarId} data-api-key={apiKey}>
+  const CALENDAR_ID = document.currentScript.dataset.calendarId;
+  const API_KEY = document.currentScript.dataset.apiKey;
+
+  async function fetchEvents() {
+    const url = new URL(
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`
+    );
+    url.searchParams.set("key", API_KEY);
+    url.searchParams.set("orderBy", "startTime");
+    url.searchParams.set("singleEvents", "true");
+
+    const res = await fetch(url.toString());
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data?.error?.message ?? `HTTP ${res.status}`);
+    }
+
+    return (data.items ?? []).map((ev) => ({
+      id: ev.id,
+      title: ev.summary || "(No title)",
+      start: ev.start?.dateTime ?? ev.start?.date,
+      end: ev.end?.dateTime ?? ev.end?.date,
+      extendedProps: {
+        description: ev.description ?? "",
+        location: ev.location ?? "",
+      },
+    }));
+  }
+
+  function initCalendar(events) {
+    const el = document.getElementById("fullcalendar");
+    const loadingEl = document.getElementById("calendar-loading");
+    const dialog = document.getElementById("event-dialog");
+    const dialogClose = document.getElementById("dialog-close");
+
+    if (!el) return;
+
+    const isMobile = () => window.innerWidth < 640;
+
+    const calendar = new FullCalendar.Calendar(el, {
+      contentHeight: "auto",
+      initialView: isMobile() ? "listMonth" : "dayGridMonth",
+      headerToolbar: {
+        left: "prev,next today",
+        center: "title",
+        right: "dayGridMonth,listMonth",
+      },
+      buttonText: {
+        today: "Today",
+        month: "Month",
+        list: "List",
+      },
+      events,
+      eventTimeFormat: {
+        hour: "numeric",
+        minute: "2-digit",
+        omitZeroMinute: true,
+        meridiem: "short",
+      },
+      eventClick({ event }) {
+        if (!dialog) return;
+
+        const fmt = (dt) =>
+          dt
+            ? new Date(dt).toLocaleString(undefined, {
+                weekday: "short",
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              })
+            : "";
+
+        document.getElementById("dialog-title").textContent = event.title;
+        document.getElementById("dialog-time").textContent = event.start
+          ? `${fmt(event.startStr)}${event.end ? " → " + fmt(event.endStr) : ""}`
+          : "";
+
+        const loc = event.extendedProps?.location;
+        const locEl = document.getElementById("dialog-location");
+        locEl.textContent = loc ? `📍 ${loc}` : "";
+        locEl.style.display = loc ? "" : "none";
+
+        const desc = event.extendedProps?.description;
+        const descEl = document.getElementById("dialog-description");
+        descEl.textContent = desc ?? "";
+        descEl.style.display = desc ? "" : "none";
+
+        dialog.showModal();
+      },
+      windowResize() {
+        calendar.changeView(isMobile() ? "listMonth" : "dayGridMonth");
+      },
+    });
+
+    calendar.render();
+    el.style.visibility = "visible";
+    loadingEl?.remove();
+
+    dialogClose?.addEventListener("click", () => dialog?.close());
+    dialog?.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
+  function showError(msg) {
+    document.getElementById("calendar-loading")?.remove();
+    const errEl = document.getElementById("calendar-error");
+    const errMsg = document.getElementById("calendar-error-msg");
+    if (errEl && errMsg) {
+      errMsg.textContent = msg;
+      errEl.style.display = "flex";
+    }
+  }
+
+  function start() {
+    if (typeof FullCalendar === "undefined") {
+      document.getElementById("fullcalendar-cdn")?.addEventListener("load", start);
+      return;
+    }
+    fetchEvents()
+      .then(initCalendar)
+      .catch((e) => showError(e.message));
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+</script>
