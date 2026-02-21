@@ -272,6 +272,7 @@
   max-width: min(460px, 92vw);
   width: 100%;
   position: fixed;
+  margin: auto;
 }
 .event-dialog::backdrop {
   background: rgba(85, 75, 65, 0.4);
@@ -289,7 +290,7 @@
   color: var(--border-color-dark);
   padding: 0.25rem 0.4rem;
   border-radius: 4px;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: all 0.15s ease, color 0.15s ease;
 }
 .dialog-close:hover {
   background: var(--beige);
@@ -297,7 +298,7 @@
 }
 
 .dialog-title {
-  margin: 0 0 0.5rem;
+  margin-bottom: 16px;
   font-size: 1.1rem;
   font-family: "PT Serif", serif;
   color: var(--black);
