@@ -4,7 +4,7 @@ date: 2026-02-04
 comments: true
 description: " Exploring the meaning of the Rite of Forgiveness, and our entry
   into Great Lent"
-image: /files/IMG_0117.jpeg
+image: /files/img-paragraph_63_1-1200x600.jpg
 ---
 This past Sunday we marked Forgiveness Sunday — the last day of Cheesefare, the final feast before the strict fast of Great Lent begins on Clean Monday. It is a day full of meaning, and our community gathered for Vespers to enter it together.
 
