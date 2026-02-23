@@ -3,7 +3,15 @@
   padding-top: 40px;
   position: relative;
 
-  // Diamond in center of top border
+  h2 {
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     width: 100%;
+     box-sizing: border-box;
+     font-size: 20px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -15,6 +23,37 @@
     border: 1px solid var(--border-color-dark);
     transform: translateX(-50%) rotate(45deg);
     z-index: 1;
+
+  }
+
+  &:nth-child(-n+1) {
+    border-top: none;
+    padding-top: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (min-width: 800px) {
+    &:nth-child(-n+2) {
+      border-top: none;
+      padding-top: 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    &:nth-child(-n+3) {
+      border-top: none;
+      padding-top: 0;
+
+      &::before {
+        display: none;
+      }
+    }
   }
 }
 

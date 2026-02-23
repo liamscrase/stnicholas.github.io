@@ -1,0 +1,91 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageH1 from "../../../components/PageH1.astro";
+import type { GetStaticPaths, Page } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const resources = [
+    {
+      name: "The Bible Project",
+      description: "Watch beautifully animated videos exploring the Bible's unified story and themes.",
+      link: "https://www.youtube.com/@BibleProject",
+      type: "YouTube Channel"
+    },
+    {
+      name: "Ancient Faith Radio",
+      description: "Listen to podcasts, music, and teachings on Orthodox Christianity.",
+      link: "https://www.ancientfaith.com/",
+      type: "Website"
+    },
+    {
+      name: "Orthodox Church in America",
+      description: "Comprehensive resources on Orthodox faith, theology, and practice.",
+      link: "https://www.oca.org/",
+      type: "Website"
+    },
+    {
+      name: "The Orthodox Study Bible",
+      description: "The first Orthodox study Bible in English with extensive commentary.",
+      link: "https://www.amazon.com/Orthodox-Study-Bible-Hardcover-Christianity/dp/0718003594",
+      type: "Resource"
+    },
+    {
+      name: "Orthodox Wiki",
+      description: "A comprehensive encyclopedia of Orthodox Christianity.",
+      link: "https://orthodoxwiki.org/",
+      type: "Website"
+    },
+    {
+      name: "The Way Podcast",
+      description: "Exploring the Orthodox faith through conversation and story.",
+      link: "https://www.ancientfaith.com/podcasts/theway",
+      type: "Podcast"
+    },
+  ];
+
+  return paginate(resources, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+type Resource = { name: string; description: string; link: string; type: string };
+type Props = {
+  page: Page<Resource>;
+};
+
+const { page } = Astro.props;
+---
+
+<style>
+  @import url("/learning.css");
+</style>
+
+<Layout title="Learning - St. Nicholas Orthodox Church">
+  <div class="content">
+    <PageH1
+      title="Learning"
+      subheader="Explore resources to deepen your understanding of Orthodox Christianity."
+    />
+    <div class="grid-3-col">
+      {page.data.map((resource) => (
+        <div class="grid-card">
+          <img src="/images/learning/coming-soon.jpg" alt={resource.name} class="line-art" />
+          <h3>{resource.name}</h3>
+          <p class="resource-type">{resource.type}</p>
+          <p>{resource.description}</p>
+          <a href={resource.link} target="_blank" rel="noopener noreferrer" class="button primary small">Visit</a>
+        </div>
+      ))}
+    </div>
+
+    {page.lastPage > 1 && (
+      <nav class="pagination" aria-label="Pagination">
+        {page.url.prev && (
+          <a href={page.url.prev} class="button tertiary small pagination-link">← Previous</a>
+        )}
+        <span class="pagination-info">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next && (
+          <a href={page.url.next} class="button tertiary small pagination-link">Next →</a>
+        )}
+      </nav>
+    )}
+  </div>
+</Layout>

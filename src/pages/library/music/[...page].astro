@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageH1 from "../../../components/PageH1.astro";
+import type { GetStaticPaths, Page } from "astro";
+
+import fs from 'fs';
+import path from 'path';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const musicDir = path.resolve('./public/music');
+  const files = fs.readdirSync(musicDir)
+    .filter((file) => file.endsWith('.pdf'));
+  const musicPdfs = files.map((file) => ({
+    name: file.replace(/\.pdf$/, ''),
+    file,
+  }));
+  return paginate(musicPdfs, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+type MusicPdf = { name: string; file: string };
+type Props = {
+  page: Page<MusicPdf>;
+};
+
+const { page } = Astro.props;
+---
+
+<style>
+  @import url("/music.css");
+</style>
+
+<Layout title="Music - St. Nicholas Orthodox Church">
+  <div class="content">
+    <PageH1
+      title="Music"
+      subheader="Download our collection of Orthodox liturgical music for personal use."
+    />
+    <div class="grid-3-col">
+      {page.data.map((pdf) => (
+        <div class="grid-card music-item">
+          <h2 title={pdf.name}>{pdf.name}</h2>
+          <div class="pdf-actions">
+            <a href={`/music/${pdf.file}`} target="_blank" class="button primary small">View</a>
+            <a href={`/music/${pdf.file}`} download class="button secondary small">Download</a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {page.lastPage > 1 && (
+      <nav class="pagination" aria-label="Pagination">
+        {page.url.prev && (
+          <a href={page.url.prev} class="button tertiary small pagination-link">← Previous</a>
+        )}
+        <span class="pagination-info">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next && (
+          <a href={page.url.next} class="button tertiary small pagination-link">Next →</a>
+        )}
+      </nav>
+    )}
+  </div>
+</Layout>

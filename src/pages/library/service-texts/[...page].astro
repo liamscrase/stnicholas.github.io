@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageH1 from "../../../components/PageH1.astro";
+import type { GetStaticPaths, Page } from "astro";
+
+import fs from 'fs';
+import path from 'path';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const serviceTextsDir = path.resolve('./public/service-texts');
+  const files = fs.readdirSync(serviceTextsDir)
+    .filter((file) => file.endsWith('.pdf'));
+  const allServiceTexts = files.map((file) => ({
+    name: file.replace(/\.pdf$/, ''),
+    file,
+  }));
+  return paginate(allServiceTexts, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+type ServiceText = { name: string; file: string };
+type Props = {
+  page: Page<ServiceText>;
+};
+
+const { page } = Astro.props;
+---
+
+<style>
+  @import url("/service-texts.css");
+</style>
+
+<Layout title="Service Texts - St. Nicholas Orthodox Church">
+  <div class="content">
+    <PageH1
+      title="Service Texts"
+      subheader="Access our collection of Orthodox service texts and prayer books."
+    />
+    <div class="grid-3-col">
+      {page.data.map((pdf) => (
+        <div class="grid-card service-text-item">
+          <h2 title={pdf.name}>{pdf.name}</h2>
+          <div class="pdf-actions">
+            <a href={`/service-texts/${pdf.file}`} target="_blank" class="button primary small">View</a>
+            <a href={`/service-texts/${pdf.file}`} download class="button secondary small">Download</a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {page.lastPage > 1 && (
+      <nav class="pagination" aria-label="Pagination">
+        {page.url.prev && (
+          <a href={page.url.prev} class="button tertiary small pagination-link">← Previous</a>
+        )}
+        <span class="pagination-info">Page {page.currentPage} of {page.lastPage}</span>
+        {page.url.next && (
+          <a href={page.url.next} class="button tertiary small pagination-link">Next →</a>
+        )}
+      </nav>
+    )}
+  </div>
+</Layout>

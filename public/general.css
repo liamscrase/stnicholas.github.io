@@ -42,6 +42,18 @@ body {
   gap: 100px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 80px;
+}
+
+.pagination-info {
+  color: var(--off-black);
+}
+
 h1 {
   font-family: "PT Serif", serif;
   font-weight: 700;
@@ -170,6 +182,7 @@ ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  min-width: 0;
 }
 .grid-card img {
   width: 100%;
