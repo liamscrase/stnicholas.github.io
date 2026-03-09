@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageH1 from "../components/PageH1.astro";
+
+const images = [
+  "47EE84F1-21DA-400C-9EAD-E55CC05BB074.jpeg",
+  "IMG_0790.jpeg",
+  "IMG_8294-rotated.jpeg",
+  "IMG_8295.jpeg",
+  "IMG_8123-rotated.jpeg",
+  "IMG_8132.jpeg",
+  "IMG_1511-rotated.jpeg",
+  "IMG_1371.jpeg",
+  "IMG_1369.jpeg",
+  "IMG_8538.jpeg",
+  "IMG_2044.jpeg",
+  "IMG_8122-rotated.jpeg",
+  "IMG_8297-rotated.jpeg",
+  "IMG_8542.jpeg",
+  "IMG_8513.jpeg",
+  "IMG_8514.jpeg",
+  "IMG_8539.jpeg",
+  "IMG_2047.jpeg",
+];
+---
+
+<Layout title="Historical Gallery - St. Nicholas Orthodox Church">
+  <link rel="stylesheet" href="/historical-gallery.css" />
+
+  <div class="content">
+    <PageH1 title="Historical Gallery" subheader="The church interior, changes, and consecration" />
+
+    <div class="gallery-grid">
+      {images.map((src, index) => (
+        <button type="button" class="gallery-item" data-src={`/images/historical-gallery/${src}`} data-index={index} aria-label="View full size">
+          <img src={`/images/historical-gallery/${src}`} alt="" loading="lazy" />
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightbox-img" />
+    </div>
+    <div class="lightbox-arrows">
+      <button type="button" class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+      <span class="lightbox-counter" id="lightbox-counter" aria-live="polite">1/18</span>
+      <button type="button" class="lightbox-next" aria-label="Next image">&#8250;</button>
+    </div>
+    <div class="lightbox-backdrop" aria-hidden="true"></div>
+  </div>
+
+  <script is:inline>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const lightboxClose = lightbox?.querySelector('.lightbox-close');
+    const lightboxPrev = lightbox?.querySelector('.lightbox-prev');
+    const lightboxNext = lightbox?.querySelector('.lightbox-next');
+    const lightboxBackdrop = lightbox?.querySelector('.lightbox-backdrop');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    const imageSrcs = Array.from(galleryItems).map((item) => item.getAttribute('data-src')).filter(Boolean);
+    const totalImages = imageSrcs.length;
+    let currentIndex = 0;
+
+    function updateCounter() {
+      if (lightboxCounter) lightboxCounter.textContent = (currentIndex + 1) + '/' + totalImages;
+    }
+
+    function showImage(index) {
+      if (!lightboxImg || index < 0 || index >= imageSrcs.length) return;
+      currentIndex = index;
+      lightboxImg.src = imageSrcs[index];
+      updateCounter();
+    }
+
+    function openLightbox(index) {
+      if (!lightbox || !lightboxImg) return;
+      currentIndex = index;
+      lightboxImg.src = imageSrcs[index];
+      updateCounter();
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || !lightboxImg) return;
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    function goPrev() {
+      const nextIndex = currentIndex <= 0 ? imageSrcs.length - 1 : currentIndex - 1;
+      showImage(nextIndex);
+    }
+
+    function goNext() {
+      const nextIndex = currentIndex >= imageSrcs.length - 1 ? 0 : currentIndex + 1;
+      showImage(nextIndex);
+    }
+
+    galleryItems?.forEach((item) => {
+      item.addEventListener('click', () => {
+        const index = parseInt(item.getAttribute('data-index'), 10);
+        if (!isNaN(index)) openLightbox(index);
+      });
+    });
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxPrev?.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); });
+    lightboxNext?.addEventListener('click', (e) => { e.stopPropagation(); goNext(); });
+    lightboxBackdrop?.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.getAttribute('aria-hidden') !== 'false') return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') goPrev();
+      if (e.key === 'ArrowRight') goNext();
+    });
+
+  </script>
+
+</Layout>

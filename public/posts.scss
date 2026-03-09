@@ -1,7 +1,7 @@
 .post-card {
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all var(--duration-normal) var(--ease-smooth);
   display: flex;
   flex-direction: column;
 

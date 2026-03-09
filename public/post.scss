@@ -38,15 +38,15 @@
      margin-bottom: 2rem;
 
      a {
-         color: #007bff;
+         color: var(--link);
          text-decoration: none;
          display: inline-flex;
          align-items: center;
          gap: 0.5rem;
-         transition: color 0.2s;
+         transition: color var(--duration-normal) var(--ease-smooth);
 
          &:hover {
-             color: #0056b3;
+             color: var(--link-hover);
              text-decoration: underline;
          }
      }
@@ -55,7 +55,7 @@
  .post-header {
      margin-bottom: 2rem;
      padding-bottom: 1rem;
-     border-bottom: 2px solid #e0e0e0;
+     border-bottom: 2px solid var(--border-light);
 
      h1 {
          font-size: 2.5rem;
@@ -109,7 +109,7 @@
      }
 
      a {
-         color: #007bff;
+         color: var(--link);
          text-decoration: none;
 
          &:hover {
@@ -128,7 +128,7 @@
      }
 
      code {
-         background-color: #f5f5f5;
+         background-color: var(--bg-light);
          padding: 0.2rem 0.4rem;
          border-radius: 3px;
          font-family: 'Courier New', monospace;
@@ -136,7 +136,7 @@
      }
 
      pre {
-         background-color: #f5f5f5;
+         background-color: var(--bg-light);
          padding: 1rem;
          border-radius: 8px;
          overflow-x: auto;
@@ -149,7 +149,7 @@
      }
 
      blockquote {
-         border-left: 4px solid #007bff;
+         border-left: 4px solid var(--link);
          padding-left: 1rem;
          margin: 1.5rem 0;
          font-style: italic;

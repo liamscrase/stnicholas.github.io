@@ -48,7 +48,7 @@
   font-size: 0.8rem !important;
   padding: 0.3rem 0.7rem !important;
   box-shadow: none !important;
-  transition: all 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: all var(--duration-fast) var(--ease-smooth), border-color var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth);
 
   &:hover,
   &:focus-visible {
@@ -105,7 +105,7 @@
 
 // Today highlight
 .fc .fc-daygrid-day.fc-day-today {
-  background: rgba(139, 38, 53, 0.05) !important;
+  background: var(--red-faint) !important;
 }
 
 .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
@@ -136,7 +136,7 @@
   font-family: "PT Serif", serif;
   padding: 4px 8px !important;
   cursor: pointer;
-  transition: filter 0.15s ease, transform 0.15s ease;
+  transition: filter var(--duration-fast) var(--ease-smooth), transform var(--duration-fast) var(--ease-smooth);
 
   &:hover {
     filter: brightness(1.15);
@@ -145,7 +145,7 @@
 }
 
 .fc .fc-event-time {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: var(--white-muted) !important;
   font-size: 0.78rem !important;
   margin-right: 6px !important;
 }
@@ -153,7 +153,7 @@
 .fc .fc-event-title {
   font-size: 0.85rem !important;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.3;
@@ -305,14 +305,14 @@
   background: var(--white);
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 48px var(--shadow-light);
   padding: 2rem;
   max-width: min(460px, 92vw);
   width: 100%;
   position: fixed;
 margin: auto;
   &::backdrop {
-    background: rgba(85, 75, 65, 0.4);
+    background: var(--black-faint);
     backdrop-filter: blur(3px);
   }
 }
@@ -328,7 +328,7 @@ margin: auto;
   color: var(--border-color-dark);
   padding: 0.25rem 0.4rem;
   border-radius: 4px;
-  transition: all 0.15s ease, color 0.15s ease;
+  transition: all var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth);
 
   &:hover {
     background: var(--beige);

@@ -21,7 +21,7 @@
     p {
         font-size: 0.95rem;
         line-height: 1.7;
-        color: var(--off-black, #222);
+        color: var(--text-dark);
         margin: 0 0 12px;
 
         &:last-child {
@@ -30,7 +30,7 @@
 
         strong {
             font-weight: 700;
-            color: var(--off-black, #222);
+            color: var(--text-dark);
         }
     }
 }
@@ -39,7 +39,7 @@
 .section-heading {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--off-black, #222);
+    color: var(--text-dark);
     margin: 0 0 20px;
 
     &::after {
@@ -90,7 +90,7 @@
 
 .detail-value {
     font-size: 0.95rem;
-    color: var(--off-black, #222);
+    color: var(--text-dark);
     font-weight: 500;
 
     &.mono {

@@ -1,92 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
-import Panel from "../components/Panel.astro";
 ---
 
-<Layout title="Contact Us">
+<Layout title="Contact Us - St. Nicholas Orthodox Church">
   <link rel="stylesheet" href="/contact.css" />
 
   <div class="content">
-    <PageH1 title="Contact Us" subheader="" />
-    <Panel>
-       <div class="contact-page">
-        <div class="contact-grid">
-  
-          <div class="contact-card">
-            <div class="card-accent"></div>
-            <div class="card-inner">
-              <div class="role-badge">Priest</div>
-              <h3 class="person-name">Father Valentin Basiuk</h3>
-              <ul class="contact-list">
-                <li>
-                  <span class="contact-icon"><span>Ph</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Phone</span>
-                    <a href="tel:033320514">03 332 0514</a>
-                  </div>
-                </li>
-                <li>
-                  <span class="contact-icon"><span>Mb</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Mobile</span>
-                    <a href="tel:0279038343">027 903 8343</a>
-                  </div>
-                </li>
-                <li>
-                  <span class="contact-icon"><span>@</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="contact-card">
-            <div class="card-accent"></div>
-            <div class="card-inner">
-              <div class="role-badge">Deacon &amp; Church Warden</div>
-              <h3 class="person-name">Deacon Vladimir Filipovich</h3>
-              <ul class="contact-list">
-                <li>
-                  <span class="contact-icon"><span>Ph</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Phone</span>
-                    <a href="tel:033588816">03 358 8816</a>
-                  </div>
-                </li>
-                <li>
-                  <span class="contact-icon"><span>Mb</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Mobile</span>
-                    <a href="tel:02103006703">021 030 6703</a>
-                  </div>
-                </li>
-                <li>
-                  <span class="contact-icon"><span>@</span></span>
-                  <div class="contact-detail">
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
+    <PageH1 title="Contact Us" subheader="Please feel free to contact us" />
+
+    <div class="contact-page">
+      <div class="contact-row">
+        <div class="contact-card">
+          <img src="/images/placeholder-profile.svg" alt="" class="contact-avatar" width="120" height="120" />
+          <h2 class="section-heading">Father Valentin Basiuk</h2>
+          <ul class="contact-list">
+            <li><a href="tel:+6433320514">Ph. 03 3320514</a></li>
+            <li><a href="tel:+64279038343">Mob. 027 903 8343</a></li>
+            <li><a href="mailto:valentinbasiuk@gmail.com">valentinbasiuk@gmail.com</a></li>
+          </ul>
         </div>
-  
-        <div class="church-address">
-          <div class="address-icon"><span>⊕</span></div>
-          <div>
-            <span class="address-label">Church Address</span>
-            <address>297 Brougham Street, Christchurch</address>
-          </div>
+
+        <div class="contact-card">
+          <img src="/images/placeholder-profile.svg" alt="" class="contact-avatar" width="120" height="120" />
+          <h2 class="section-heading">Deacon Vladimir Filipovich</h2>
+          <ul class="contact-list">
+            <li><a href="tel:+6433588816">Ph. 03 3588816</a></li>
+            <li><a href="tel:+64210306703">Mob. 021 030 6703</a></li>
+            <li><a href="mailto:deacon@svetinikola.org.nz">deacon@svetinikola.org.nz</a></li>
+          </ul>
         </div>
       </div>
-    </Panel>
-
+    </div>
   </div>
 
 </Layout>
