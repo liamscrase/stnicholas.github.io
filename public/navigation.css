@@ -223,10 +223,10 @@
 .offcanvas-menu .menu-items ul li a {
   display: block;
   color: var(--white);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 14px 24px;
 }
 .offcanvas-menu .menu-items ul li.offcanvas-dropdown {
   width: 100%;
@@ -239,17 +239,17 @@
   background: none;
   border: none;
   color: var(--white);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   font-family: "PT Serif", serif;
   text-align: left;
-  padding: 10px 20px;
+  padding: 14px 24px;
   cursor: pointer;
   position: relative;
 }
 .offcanvas-menu .menu-items ul li.offcanvas-dropdown .offcanvas-dropdown-toggle::after {
   content: "▾";
-  font-size: 12px;
+  font-size: 14px;
   transition: transform var(--duration-normal) var(--ease-smooth);
 }
 .offcanvas-menu .menu-items ul li.offcanvas-dropdown.is-open .offcanvas-dropdown-toggle::after {
@@ -264,13 +264,13 @@
   transition: max-height var(--duration-normal) var(--ease-smooth);
 }
 .offcanvas-menu .menu-items ul li.offcanvas-dropdown .offcanvas-dropdown-menu li a {
-  font-size: 14px;
-  padding: 8px 20px 8px 36px;
+  font-size: 16px;
+  padding: 12px 24px 12px 40px;
   color: var(--white-muted);
   border-left: 3px solid transparent;
 }
 .offcanvas-menu .menu-items ul li.offcanvas-dropdown.is-open .offcanvas-dropdown-menu {
-  max-height: 200px;
+  max-height: 240px;
 }
 
 .offcanvas-backdrop {
