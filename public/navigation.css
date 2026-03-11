@@ -8,7 +8,7 @@
   margin: auto;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 14px 20px;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -16,7 +16,7 @@
   max-width: 1200px;
 }
 .desktop-navbar .desktop-navbar-container .logo {
-  height: 120px;
+  height: 140px;
   display: block;
 }
 .desktop-navbar .desktop-navbar-container .social {
@@ -120,7 +120,7 @@
 }
 .mobile-navbar .logo {
   width: 100%;
-  max-width: 200px;
+  max-width: 130px;
   display: block;
 }
 .mobile-navbar .mobile-navbar-container {
@@ -356,6 +356,4 @@ footer .links a:hover {
   .desktop-navbar {
     display: flex;
   }
-}
-
-/*# sourceMappingURL=navigation.css.map */
+}/*# sourceMappingURL=navigation.css.map */

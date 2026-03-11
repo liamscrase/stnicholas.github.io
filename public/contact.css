@@ -50,7 +50,8 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 20px;
 }
 
@@ -73,6 +74,4 @@
 .contact-list a:hover {
   color: var(--red);
   text-decoration: underline;
-}
-
-/*# sourceMappingURL=contact.css.map */
+}/*# sourceMappingURL=contact.css.map */
