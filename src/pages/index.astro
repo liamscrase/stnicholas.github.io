@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Panel from "../components/Panel.astro";
+import ResourcesCarousel from "../components/ResourcesCarousel.astro";
 ---
 
 <Layout
@@ -8,7 +9,6 @@ import Panel from "../components/Panel.astro";
   description="St. Nicholas Orthodox Church in Christchurch, New Zealand. Find service times, parish news, and resources for faith and learning."
 >
   <link rel="stylesheet" href="/home.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
 
     <div class="hero-section">
       <img
@@ -116,102 +116,9 @@ import Panel from "../components/Panel.astro";
     </section>
     <section class="resources-section">
       <div class="text-container">
-
         <h2>Resources for Your Faith Journey</h2>
       </div>
-      <div class="splide resources-splide" aria-label="Resources for your faith journey">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="grid-card">
-                <img
-                class="line-art"
-                  src="/images/line-art/gospel.svg"
-                  alt="Orthodox Christian library resources"
-                />
-                <h3>Library & Music</h3>
-                <p>
-                  Access our collection of service texts, Orthodox music, and spiritual resources
-                  for prayer and study.
-                </p>
-                <a href="/library" class="button secondary large">Browse Library</a>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="grid-card">
-                <img
-                  class="line-art"
-                  src="/images/line-art/chalice2.svg"
-                  alt="Support St. Nicholas parish"
-                />
-                <h3>Support Our Parish</h3>
-                <p>
-                  Your generous contributions help maintain our church and support our mission
-                  to serve our community and glorify God.
-                </p>
-                <a href="/giving" class="button secondary large">Ways to Give</a>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="grid-card">
-                <img
-                  class="line-art"
-                  src="/images/line-art/priest.svg"
-                  alt="Contact St. Nicholas church"
-                />
-                <h3>Get in Touch</h3>
-                <p>
-                  Have questions or want to learn more about Orthodoxy? We'd love to hear from you
-                  and welcome you to our parish family.
-                </p>
-                <a href="/contact" class="button secondary large">Contact Us</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ResourcesCarousel />
     </section>
   </div>
-
-  <script is:inline>
-    (function () {
-      function initSplide() {
-        var el = document.querySelector(".resources-splide");
-        if (!el) return;
-
-        var splide;
-        var mq = window.matchMedia("(max-width: 1023px)");
-
-        function mount() {
-          if (mq.matches) {
-            if (!splide) {
-              splide = new Splide(el, {
-                type: "loop",
-                perPage: 2,
-                perMove: 1,
-                gap: "2rem",
-                arrows: true,
-                pagination: true,
-                breakpoints: {
-                  767: { perPage: 1 },
-                },
-              });
-              splide.mount();
-            }
-          } else if (splide) {
-            splide.destroy(true);
-            splide = undefined;
-          }
-        }
-
-        mount();
-        mq.addEventListener("change", mount);
-      }
-
-      var s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js";
-      s.onload = initSplide;
-      document.head.appendChild(s);
-    })();
-  </script>
 </Layout>

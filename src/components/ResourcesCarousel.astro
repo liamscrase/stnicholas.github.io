@@ -1,0 +1,177 @@
+---
+interface Resource {
+  image: string;
+  alt: string;
+  heading: string;
+  description: string;
+  href: string;
+  label: string;
+}
+
+const resources: Resource[] = [
+  {
+    image: "/images/line-art/gospel.svg",
+    alt: "Orthodox Christian Resources",
+    heading: "Learning Resources",
+    description: "Explore our curated collection of books, websites, podcasts, and more to deepen your understanding of the Orthodox faith.",
+    href: "/library/learning",
+    label: "Browse Library",
+  },
+  {
+    image: "/images/line-art/chalice2.svg",
+    alt: "Support St. Nicholas parish",
+    heading: "Support Our Parish",
+    description:
+      "Your generous contributions help maintain our church and support our mission to serve our community and glorify God.",
+    href: "/giving",
+    label: "Ways to Give",
+  },
+  {
+    image: "/images/line-art/priest.svg",
+    alt: "Contact St. Nicholas church",
+    heading: "Get in Touch",
+    description:
+      "Have questions or want to learn more about Orthodoxy? We'd love to hear from you and welcome you to our parish family.",
+    href: "/contact",
+    label: "Contact Us",
+  },
+];
+---
+
+<div class="splide resources-splide" aria-label="Resources for your faith journey" data-resources-carousel>
+  <div class="splide__track">
+    <ul class="splide__list">
+      {resources.map((r) => (
+        <li class="splide__slide">
+          <div class="grid-card">
+            <img class="line-art" src={r.image} alt={r.alt} />
+            <h3>{r.heading}</h3>
+            <p>{r.description}</p>
+            <a href={r.href} class="button secondary large">{r.label}</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style is:global>
+  .resources-splide {
+    margin-top: 40px;
+  }
+
+  .resources-splide .splide__slide {
+    height: auto;
+  }
+
+  .resources-splide .grid-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resources-splide .grid-card p {
+    flex: 1;
+  }
+
+  .resources-splide .splide__arrow--prev { left: 0; }
+  .resources-splide .splide__arrow--next { right: 0; }
+
+  .resources-splide .splide__arrow {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .resources-splide .splide__arrow:hover {
+    background: transparent;
+  }
+
+  .resources-splide .splide__arrow svg {
+    fill: var(--black);
+  }
+
+  .resources-splide .splide__pagination {
+    bottom: -3rem;
+  }
+
+  .resources-splide .splide__pagination .splide__pagination__page.is-active {
+    background: var(--red);
+  }
+
+  @media (min-width: 1024px) {
+    .resources-splide .splide__list {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      transform: none !important;
+    }
+
+    .resources-splide .splide__slide {
+      width: auto !important;
+    }
+
+    .resources-splide .splide__arrows,
+    .resources-splide .splide__pagination {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  declare var Splide: any;
+
+  const el = document.querySelector<HTMLElement>("[data-resources-carousel]");
+  if (el) {
+    let splide: any;
+    let cssLoaded = false;
+    const mq = window.matchMedia("(max-width: 1023px)");
+
+    function loadAndMount() {
+      if (!cssLoaded) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css";
+        document.head.appendChild(link);
+        cssLoaded = true;
+      }
+      if (typeof Splide !== "undefined") {
+        doMount();
+      } else {
+        const s = document.createElement("script");
+        s.src = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js";
+        s.onload = doMount;
+        document.head.appendChild(s);
+      }
+    }
+
+    function doMount() {
+      if (!splide) {
+        splide = new Splide(el, {
+          type: "loop",
+          perPage: 2,
+          perMove: 1,
+          gap: "2rem",
+          arrows: true,
+          pagination: true,
+          clones: 3,
+          breakpoints: {
+            767: { perPage: 1, clones: 3 },
+          },
+        });
+        splide.mount();
+      }
+    }
+
+    function mount() {
+      if (mq.matches) {
+        loadAndMount();
+      } else if (splide) {
+        splide.destroy(true);
+        splide = undefined;
+      }
+    }
+
+    mount();
+    mq.addEventListener("change", mount);
+  }
+</script>
