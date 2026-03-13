@@ -93,8 +93,56 @@ h1 {
 }
 
 .resources-section {
+  margin-bottom: 50px;
   p {
     margin-bottom: 24px;
+  }
+
+  .resources-splide {
+    margin-top: 40px;
+
+    .splide__slide {
+      height: auto;
+    }
+
+    .grid-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        flex: 1;
+      }
+    }
+
+    .splide__arrow--prev {
+      left: 0;
+    }
+
+    .splide__arrow--next {
+      right: 0;
+    }
+
+    .splide__arrow {
+      background: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background: transparent;
+      }
+
+      svg {
+        fill: var(--black);
+      }
+    }
+
+    .splide__pagination {
+      bottom: -3rem;
+
+      .splide__pagination__page.is-active {
+        background: var(--red);
+      }
+    }
   }
 }
 
@@ -116,6 +164,26 @@ h1 {
 @media (min-width: 1024px) {
   .content {
     gap: 120px;
+  }
+
+  .resources-section {
+    .resources-splide {
+      .splide__list {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+        transform: none !important;
+      }
+
+      .splide__slide {
+        width: auto !important;
+      }
+
+      .splide__arrows,
+      .splide__pagination {
+        display: none;
+      }
+    }
   }
 }
 

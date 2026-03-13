@@ -1,17 +1,19 @@
 ---
+/// <reference types="node" />
 import Layout from "../../../layouts/Layout.astro";
 import PageH1 from "../../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
 
-import fs from 'fs';
-import path from 'path';
+import { readdirSync } from "fs";
+import { resolve } from "path";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const musicDir = path.resolve('./public/music');
-  const files = fs.readdirSync(musicDir)
-    .filter((file) => file.endsWith('.pdf'));
-  const musicPdfs = files.map((file) => ({
-    name: file.replace(/\.pdf$/, ''),
+  const musicDir = resolve("./public/music");
+  const files = readdirSync(musicDir, { encoding: "utf8" }).filter((file: string) =>
+    file.endsWith(".pdf")
+  );
+  const musicPdfs = files.map((file: string) => ({
+    name: file.replace(/\.pdf$/, ""),
     file,
   }));
   return paginate(musicPdfs, { pageSize: 9 });
@@ -29,7 +31,10 @@ const { page } = Astro.props;
   @import url("/music.css");
 </style>
 
-<Layout title="Music - St. Nicholas Orthodox Church">
+<Layout
+  title="Music - St. Nicholas Orthodox Church"
+  description="Download Orthodox liturgical music PDFs from the St. Nicholas parish music library."
+>
   <div class="content">
     <PageH1
       title="Music"

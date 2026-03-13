@@ -3,27 +3,77 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const currentPath = Astro.url.pathname;
+const siteTitle = "St. Nicholas Orthodox Church Christchurch";
+const pageTitle = title ?? siteTitle;
+const siteDescription =
+  "St. Nicholas Orthodox Church Christchurch — service times, parish news, learning resources, and community updates.";
+const pageDescription = description ?? siteDescription;
+const canonicalURL = Astro.url.href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "St. Nicholas Russian Orthodox Parish",
+  "url": "https://www.stnicholaschurch.org.nz",
+  "telephone": "+64-3-332-0514",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "297 Brougham Street",
+    "addressLocality": "Sydenham",
+    "addressRegion": "Christchurch",
+    "postalCode": "8023",
+    "addressCountry": "NZ"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "name": "Vespers",
+      "opens": "19:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "name": "Divine Liturgy",
+      "opens": "09:00",
+      "closes": "11:00"
+    }
+  ]
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-NZ">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>St. Nicholas Orthodox Church Christchurch</title>
+    <meta name="description" content={pageDescription} />
+    <title>{pageTitle}</title>
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="St. Nicholas Russian Orthodox Parish" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <link rel="stylesheet" href="/general.css" />
     <link rel="stylesheet" href="/navigation.css" />
     <link rel="stylesheet" href="/style.css" />
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

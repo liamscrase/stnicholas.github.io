@@ -1,8 +1,8 @@
-
 .desktop-navbar {
   width: 100%;
   display: none;
   z-index: 100;
+
   .desktop-navbar-container {
     margin: auto;
     display: flex;
@@ -19,7 +19,7 @@
       display: block;
     }
 
-    .social {     
+    .social {
       margin-right: 12px;
 
       a {
@@ -38,7 +38,11 @@
         list-style: none;
         display: flex;
         gap: 32px;
-        min-width: 237px;
+        min-width: 250px;
+
+        &:second-child {
+          justify-content: flex-end;
+        }
 
         li {
           display: flex;
@@ -69,7 +73,7 @@
               cursor: pointer;
               display: flex;
               align-items: center;
-              
+
               &::after {
                 content: '▾';
                 margin-left: 4px;
@@ -100,13 +104,13 @@
               li {
                 display: block;
                 width: 100%;
-                
+
                 a {
                   display: block;
                   padding: 12px;
                   white-space: nowrap;
                   width: 100%;
-                  
+
                   &:hover {
                     background: var(--beige);
                     opacity: 1;
@@ -204,7 +208,7 @@
   }
 
   // Menu open: hamburger → X
-  .menu-toggle:checked ~ .mobile-navbar-container .hamburger span {
+  .menu-toggle:checked~.mobile-navbar-container .hamburger span {
     &:nth-child(1) {
       transform: translateY(0) rotate(45deg);
     }
@@ -401,29 +405,35 @@ footer {
 }
 
 
-  // Desktop styles
-  @media (min-width: 800px) {
+// Desktop styles
+@media (min-width: 800px) {
 
-    footer {
-      .links {
-        flex-direction: row;
-      }
-    }
+  .header-bg {
+    display: block;
+    width: 100%;
+    height: 164px;
+    z-index: -1;
+    background-color: var(--black);
+  }
 
-    .header-bg {
-      display: block;
-      width: 100%;
-      height: 164px;
-      z-index: -1;
-      background-color: var(--black);
-    }
+  .mobile-navbar {
+    display: none;
+  }
 
-    .mobile-navbar {
-      display: none;
-    }
+  .desktop-navbar {
+    display: flex;
 
-    .desktop-navbar {
-      display: flex;
+  }
+}
 
+// Desktop styles
+@media (min-width: 1200px) {
+
+  footer {
+    .links {
+      flex-direction: row;
     }
   }
+
+
+}

@@ -36,7 +36,10 @@
   list-style: none;
   display: flex;
   gap: 32px;
-  min-width: 237px;
+  min-width: 250px;
+}
+.desktop-navbar .desktop-navbar-container .nav-links ul:second-child {
+  justify-content: flex-end;
 }
 .desktop-navbar .desktop-navbar-container .nav-links ul li {
   display: flex;
@@ -340,9 +343,6 @@ footer .links a:hover {
 }
 
 @media (min-width: 800px) {
-  footer .links {
-    flex-direction: row;
-  }
   .header-bg {
     display: block;
     width: 100%;
@@ -355,5 +355,10 @@ footer .links a:hover {
   }
   .desktop-navbar {
     display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  footer .links {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=navigation.css.map */

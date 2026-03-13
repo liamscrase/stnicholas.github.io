@@ -225,12 +225,12 @@ ul {
   text-align: center;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .content {
     padding: 60px 20px;
   }
   h1 {
-    font-size: 48px;
+    font-size: 36px;
   }
   h2 {
     font-size: 28px;
