@@ -11,10 +11,10 @@ import "../styles/home.scss";
 >
 
     <div class="hero-section">
-      <img
+            <img
         class="hero-img"
         src="/images/banner.webp"
-        sizes="100vw"
+        sizes="50vw"
         alt="St Nicholas hero banner"
         loading="eager"
         fetchpriority="high"
@@ -22,23 +22,23 @@ import "../styles/home.scss";
         width="1600"
         height="900"
       />
-  </div>
+      <div class="content">
+        <div class="hero-content">
+          <h1>Welcome to St. Nicholas Russian Orthodox Parish<br>
+            <span>Christchurch, New Zealand</span>
+          </h1>
+          <div class="button-container">
+            <a href="/schedule" class="button primary large">View Service Times</a>
+            <a href="/parish-news" class="button secondary large">Parish News</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 
   <!-- Service Highlights Section -->
   <div class="content home">
-
-    <section class="welcome-section">
-      <div class="text-container">
-        <h1>Welcome to St. Nicholas Russian Orthodox Parish<br>
-          <span>Christchurch, New Zealand</span>
-        </h1>
-      </div>
-      <div class="button-container">
-        <a href="/schedule" class="button primary large">View Service Times</a>
-        <a href="/parish-news" class="button secondary large">Parish News</a>
-      </div>
-    </section>
 
     <section class="service-highlights">
       <div class="text-container">
@@ -122,3 +122,19 @@ import "../styles/home.scss";
     </section>
   </div>
 </Layout>
+
+<script>
+  import { animate } from "motion";
+
+  animate(
+    ".hero-content h1",
+    { opacity: [0, 1], y: [40, 0] },
+    { duration: 0.7, easing: [0.33, 1, 0.68, 1] }
+  );
+
+  animate(
+    ".hero-content .button-container",
+    { opacity: [0, 1], y: [20, 0] },
+    { duration: 0.55, delay: 0.3, easing: [0.33, 1, 0.68, 1] }
+  );
+</script>

@@ -45,6 +45,13 @@ if (calendarId && apiKey) {
     console.error("[FullCalendar] Build-time fetch failed:", e.message);
   }
 }
+
+const icsUrl = calendarId
+  ? `https://calendar.google.com/calendar/ical/${encodeURIComponent(calendarId)}/public/basic.ics`
+  : "";
+const googleCalUrl = calendarId
+  ? `https://calendar.google.com/calendar/u/0?cid=${Buffer.from(calendarId).toString("base64")}`
+  : "";
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" />
@@ -66,6 +73,18 @@ if (calendarId && apiKey) {
   </dialog>
 </div>
 
+{calendarId && (
+  <div class="calendar-subscribe">
+    <span class="calendar-subscribe-label">Subscribe to calendar:</span>
+    <a href={googleCalUrl} target="_blank" rel="noopener noreferrer" class="button secondary small">
+      Add to Google Calendar
+    </a>
+    <button class="button secondary small" id="subscribe-btn" data-ics-url={icsUrl}>
+      Copy ICS link
+    </button>
+  </div>
+)}
+
 <script is:inline>
   function initCalendar(events) {
     const el = document.getElementById("fullcalendar");
@@ -81,9 +100,9 @@ if (calendarId && apiKey) {
       contentHeight: "auto",
       initialView: isMobile() ? "listMonth" : "dayGridMonth",
       headerToolbar: {
-        left: "prev,next today",
+        start: "prev,next today",
         center: "title",
-        right: "dayGridMonth,listMonth",
+        end: "dayGridMonth,listMonth",
       },
       buttonText: {
         today: "Today",
@@ -152,6 +171,17 @@ if (calendarId && apiKey) {
     const el = document.getElementById("fullcalendar");
     const events = JSON.parse(el?.dataset.events ?? "[]");
     initCalendar(events);
+  }
+
+  const subscribeBtn = document.getElementById("subscribe-btn");
+  if (subscribeBtn) {
+    subscribeBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(subscribeBtn.dataset.icsUrl).then(() => {
+        const original = subscribeBtn.textContent;
+        subscribeBtn.textContent = "Copied!";
+        setTimeout(() => { subscribeBtn.textContent = original; }, 2000);
+      });
+    });
   }
 
   if (document.readyState === "loading") {

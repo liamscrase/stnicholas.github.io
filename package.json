@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^5.16.15",
+    "motion": "^12.36.0",
     "sass": "^1.97.3"
   },
   "devDependencies": {
