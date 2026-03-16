@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import PageH1 from "../../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
+import "../../../styles/music.scss";
 
 import fs from 'fs';
 import path from 'path';
@@ -24,10 +25,6 @@ type Props = {
 
 const { page } = Astro.props;
 ---
-
-<style>
-  @import url("/music.css");
-</style>
 
 <Layout title="Music - St. Nicholas Orthodox Church">
   <div class="content">

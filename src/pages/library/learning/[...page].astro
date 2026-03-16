@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import PageH1 from "../../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
+import "../../../styles/learning.scss";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const resources = [
@@ -53,10 +54,6 @@ type Props = {
 
 const { page } = Astro.props;
 ---
-
-<style>
-  @import url("/learning.css");
-</style>
 
 <Layout title="Learning - St. Nicholas Orthodox Church">
   <div class="content">

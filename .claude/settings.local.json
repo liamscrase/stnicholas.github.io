@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Liam Scrase/Desktop/stnicholas.github.io/**)",
+      "Bash(done)"
+    ]
+  }
+}

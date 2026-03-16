@@ -1,21 +1,60 @@
 ---
-const calendarId = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID ?? "liamscrase1@gmail.com";
-const apiKey = import.meta.env.PUBLIC_GOOGLE_CALENDAR_API_KEY ?? "";
+// Fetched at BUILD TIME — API key never reaches the browser.
+// Rename your .env.local vars:
+//   PUBLIC_GOOGLE_CALENDAR_ID        → GOOGLE_CALENDAR_ID
+//   PUBLIC_GOOGLE_CALENDAR_API_KEY   → GOOGLE_CALENDAR_API_KEY
+const calendarId = import.meta.env.GOOGLE_CALENDAR_ID ?? "";
+const apiKey = import.meta.env.GOOGLE_CALENDAR_API_KEY ?? "";
+
+let events: Array<{
+  id: string;
+  title: string;
+  start: string | undefined;
+  end: string | undefined;
+  extendedProps: { description: string; location: string };
+}> = [];
+
+if (calendarId && apiKey) {
+  try {
+    const url = new URL(
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events`
+    );
+    url.searchParams.set("key", apiKey);
+    url.searchParams.set("orderBy", "startTime");
+    url.searchParams.set("singleEvents", "true");
+    url.searchParams.set("timeMin", new Date().toISOString());
+
+    const res = await fetch(url.toString());
+    if (!res.ok) {
+      const errData = await res.json();
+      throw new Error(errData?.error?.message ?? `HTTP ${res.status}`);
+    }
+    const data = await res.json();
+    events = (data.items ?? []).map((ev: any) => ({
+      id: ev.id,
+      title: ev.summary || "(No title)",
+      start: ev.start?.dateTime ?? ev.start?.date,
+      end: ev.end?.dateTime ?? ev.end?.date,
+      extendedProps: {
+        description: ev.description ?? "",
+        location: ev.location ?? "",
+      },
+    }));
+  } catch (e: any) {
+    console.error("[FullCalendar] Build-time fetch failed:", e.message);
+  }
+}
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" id="fullcalendar-cdn"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js" id="fullcalendar-cdn"></script>
 
 <div class="calendar-wrapper" role="region" aria-label="Event Calendar">
   <div id="calendar-loading" aria-live="polite" class="calendar-loading">
     <div class="spinner" aria-hidden="true"></div>
     <span>Loading calendar…</span>
   </div>
-  <div id="calendar-error" class="calendar-error" style="display:none;" role="alert">
-    <span>⚠️</span>
-    <p id="calendar-error-msg"></p>
-  </div>
-  <div id="fullcalendar" style="visibility:hidden;"></div>
+  <div id="fullcalendar" style="visibility:hidden;" data-events={JSON.stringify(events)}></div>
 
   <dialog id="event-dialog" class="event-dialog">
     <button class="dialog-close" aria-label="Close" id="dialog-close">✕</button>
@@ -26,37 +65,7 @@ const apiKey = import.meta.env.PUBLIC_GOOGLE_CALENDAR_API_KEY ?? "";
   </dialog>
 </div>
 
-<script is:inline data-calendar-id={calendarId} data-api-key={apiKey}>
-  const CALENDAR_ID = document.currentScript.dataset.calendarId;
-  const API_KEY = document.currentScript.dataset.apiKey;
-
-  async function fetchEvents() {
-    const url = new URL(
-      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events`
-    );
-    url.searchParams.set("key", API_KEY);
-    url.searchParams.set("orderBy", "startTime");
-    url.searchParams.set("singleEvents", "true");
-
-    const res = await fetch(url.toString());
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data?.error?.message ?? `HTTP ${res.status}`);
-    }
-
-    return (data.items ?? []).map((ev) => ({
-      id: ev.id,
-      title: ev.summary || "(No title)",
-      start: ev.start?.dateTime ?? ev.start?.date,
-      end: ev.end?.dateTime ?? ev.end?.date,
-      extendedProps: {
-        description: ev.description ?? "",
-        location: ev.location ?? "",
-      },
-    }));
-  }
-
+<script is:inline>
   function initCalendar(events) {
     const el = document.getElementById("fullcalendar");
     const loadingEl = document.getElementById("calendar-loading");
@@ -134,24 +143,14 @@ const apiKey = import.meta.env.PUBLIC_GOOGLE_CALENDAR_API_KEY ?? "";
     });
   }
 
-  function showError(msg) {
-    document.getElementById("calendar-loading")?.remove();
-    const errEl = document.getElementById("calendar-error");
-    const errMsg = document.getElementById("calendar-error-msg");
-    if (errEl && errMsg) {
-      errMsg.textContent = msg;
-      errEl.style.display = "flex";
-    }
-  }
-
   function start() {
     if (typeof FullCalendar === "undefined") {
       document.getElementById("fullcalendar-cdn")?.addEventListener("load", start);
       return;
     }
-    fetchEvents()
-      .then(initCalendar)
-      .catch((e) => showError(e.message));
+    const el = document.getElementById("fullcalendar");
+    const events = JSON.parse(el?.dataset.events ?? "[]");
+    initCalendar(events);
   }
 
   if (document.readyState === "loading") {

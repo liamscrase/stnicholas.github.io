@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import PageH1 from "../../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
+import "../../../styles/service-texts.scss";
 
 import fs from 'fs';
 import path from 'path';
@@ -24,10 +25,6 @@ type Props = {
 
 const { page } = Astro.props;
 ---
-
-<style>
-  @import url("/service-texts.css");
-</style>
 
 <Layout title="Service Texts - St. Nicholas Orthodox Church">
   <div class="content">

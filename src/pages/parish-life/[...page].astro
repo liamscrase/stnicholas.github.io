@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import PageH1 from "../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import "../../styles/posts.scss";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection("posts");
@@ -23,10 +24,6 @@ type Props = {
 const { page } = Astro.props;
 ---
 
-<style>
-  @import url("/posts.css");
-</style>
-
 <Layout title="Parish Life - St. Nicholas Orthodox Church">
   <div class="content">
     <PageH1 title="Parish Life" subheader="See what's been happening recently in the Parish" />
@@ -34,7 +31,7 @@ const { page } = Astro.props;
         {
           page.data.map((post) => (
             <a
-              href={`/posts/${post.slug}`}
+              href={`/posts/${post.id.replace(/\.mdx?$/, '')}`}
               class="post-card"
               aria-label={`Read more about ${post.data.title}`}
             >
@@ -42,6 +39,9 @@ const { page } = Astro.props;
                 src={post.data.image || "/images/cross.svg"}
                 alt={post.data.title}
                 class="post-hero-image"
+                loading="lazy"
+                width="600"
+                height="400"
               />
               <div class="post-card-content">
                 <h2>{post.data.title}</h2>

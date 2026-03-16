@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import "../../styles/post.scss";
 
 // 1. Generate a path for every post in your folder
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
   return allPosts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
     props: { post },
   }));
 }
@@ -19,7 +20,6 @@ const { Content } = await post.render();
 ---
 
 <Layout title={`${post.data.title} - St. Nicholas Orthodox Church`}>
-  <link rel="stylesheet" href="/post.css" />
 
     <div class="content">
       <div class="post-hero">
@@ -27,6 +27,10 @@ const { Content } = await post.render();
           src={post.data.image || '/images/cross.svg'}
           alt={post.data.title}
           class="post-hero-image"
+          loading="eager"
+          fetchpriority="high"
+          width="1200"
+          height="600"
         />
       </div>
       <a href="/parish-life" class="button tertiary small"><span class="icon-arrow_back_ios"></span> Back to Parish Life</a>
