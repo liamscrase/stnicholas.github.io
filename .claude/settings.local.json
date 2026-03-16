@@ -5,7 +5,8 @@
       "Bash(do echo:*)",
       "Read(//c/Users/Liam Scrase/Desktop/stnicholas.github.io/**)",
       "Bash(done)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "WebFetch(domain:motion.dev)"
     ]
   }
 }

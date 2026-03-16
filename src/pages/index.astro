@@ -81,35 +81,19 @@ import "../styles/home.scss";
       </div>
     </section>
 
-    <section class="recent-updates">
-      <div class="text-container">
-
-        <h2>Parish News & Celebrations</h2>
-        <p>
-          Experience the richness of Orthodox tradition through our feast days,
-          celebrations, and community gatherings throughout the liturgical year.
-        </p>
-      </div>
+    <section class="gallery-section">
       <Panel>
-        <div class="parish-panel">
-          <div class="parish-section">
-            <h3>Feast Days & Celebrations</h3>
-            <p>
-              Join us in celebrating the great feasts of the Church including Pascha (Easter),
-              the Nativity (Christmas), Theophany, and other significant holy days that mark
-              our journey through the liturgical calendar.
-            </p>
-          </div>
-          <div class="parish-section">
-            <h3>Community Life</h3>
-            <p>
-              Our parish family comes together for fellowship meals, cultural celebrations,
-              and special events. Discover how we live out our faith together through worship,
-              service, and brotherhood.
-            </p>
-          </div>
-          <div class="button-container">
-            <a href="/parish-news" class="button primary large">Explore Parish News</a>
+        <div class="inner">
+
+          <h2>See Our Icon Gallery</h2>
+          <p>
+            Explore our collection of icons, each with its own story and significance in
+            the Orthodox faith.
+          </p>
+          <div class="img-container">
+            <img src="/images/icon-gallery/DSCF3715-rotated-e1585023929894.jpg" alt="">
+            <img src="/images/icon-gallery/test-7.jpg" alt="">
+            <img src="/images/icon-gallery/test-14.jpg" alt="">
           </div>
         </div>
       </Panel>
@@ -124,17 +108,17 @@ import "../styles/home.scss";
 </Layout>
 
 <script>
-  import { animate } from "motion";
+  import { animateMini } from "motion";
 
-  animate(
+  animateMini(
     ".hero-content h1",
     { opacity: [0, 1], y: [40, 0] },
-    { duration: 0.7, easing: [0.33, 1, 0.68, 1] }
+    { duration: 0.7, ease: [0.33, 1, 0.68, 1] }
   );
 
-  animate(
+  animateMini(
     ".hero-content .button-container",
     { opacity: [0, 1], y: [20, 0] },
-    { duration: 0.55, delay: 0.3, easing: [0.33, 1, 0.68, 1] }
+    { duration: 0.55, delay: 0.3, ease: [0.33, 1, 0.68, 1] }
   );
 </script>
