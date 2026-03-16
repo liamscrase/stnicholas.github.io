@@ -1,3 +1,5 @@
+@use "./reset";
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -43,16 +45,6 @@ html {
   --duration-fast: 0.25s;
   --duration-normal: 0.35s;
   --duration-slow: 0.4s;
-}
-
-// ====================
-// Base Styles
-// ====================
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
 }
 
 body {
