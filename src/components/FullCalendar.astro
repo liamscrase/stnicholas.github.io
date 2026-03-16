@@ -21,7 +21,11 @@ if (calendarId && apiKey) {
     url.searchParams.set("singleEvents", "true");
     url.searchParams.set("timeMin", new Date().toISOString());
 
-    const res = await fetch(url.toString());
+    const res = await fetch(url.toString(), {
+      headers: {
+        "referer": "https://www.stnicholaschurch.org.nz/",
+      },
+    });
     if (!res.ok) {
       const errData = await res.json();
       throw new Error(errData?.error?.message ?? `HTTP ${res.status}`);
