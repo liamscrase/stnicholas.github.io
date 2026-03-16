@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
-import "../styles/historical-gallery.scss";
+import "../styles/gallery.scss";
 
 const images = [
   "DSCF3715-rotated-e1585023929894.jpg",
@@ -34,7 +34,10 @@ const images = [
 ];
 ---
 
-<Layout title="Icon Gallery - St. Nicholas Orthodox Church">
+<Layout
+  title="Icon Gallery - St. Nicholas Orthodox Church"
+  description="Browse iconography and church artwork from St. Nicholas Orthodox Church in Christchurch."
+>
 
   <div class="content">
     <PageH1 title="Icon Gallery" subheader="Paintings and icons from inside the church" />

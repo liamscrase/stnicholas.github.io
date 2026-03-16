@@ -1,10 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Panel from "../components/Panel.astro";
+import ResourcesCarousel from "../components/ResourcesCarousel.astro";
 import "../styles/home.scss";
 ---
 
-<Layout title="Home - St. Nicholas Orthodox Church">
+<Layout
+  title="St. Nicholas Russian Orthodox Parish | Christchurch, NZ"
+  description="St. Nicholas Orthodox Church in Christchurch, New Zealand. Find service times, parish news, and resources for faith and learning."
+>
 
     <div class="hero-section">
       <img
@@ -20,19 +24,19 @@ import "../styles/home.scss";
       />
   </div>
 
-  
+
   <!-- Service Highlights Section -->
   <div class="content home">
 
     <section class="welcome-section">
       <div class="text-container">
-        <h1>Welcome to The Parish of St. Nicholas<br>
+        <h1>Welcome to St. Nicholas Russian Orthodox Parish<br>
           <span>Christchurch, New Zealand</span>
         </h1>
       </div>
       <div class="button-container">
         <a href="/schedule" class="button primary large">View Service Times</a>
-        <a href="/parish-life" class="button secondary large">Parish Life</a>
+        <a href="/parish-news" class="button secondary large">Parish News</a>
       </div>
     </section>
 
@@ -40,34 +44,34 @@ import "../styles/home.scss";
       <div class="text-container">
         <h2>Join Us for Worship</h2>
         <p>
-          All are welcome to attend our services and experience the reverence and beauty 
+          All are welcome to attend our services and experience the reverence and beauty
           of the Divine Liturgy in the Orthodox tradition.
         </p>
       </div>
       <div class="grid-2-col">
         <div class="grid-card">
-          <img 
-            src="/images/home/church-exterior.jpg" 
+          <img
+            src="/images/home/church-exterior.jpg"
             alt="Divine Liturgy at St. Nicholas"
             width="300"
             height="200"
           />
           <h3>Regular Services</h3>
           <p>
-            Join us for Vespers on Saturday evenings at 7:00 PM and Divine Liturgy on 
+            Join us for Vespers on Saturday evenings at 7:00 PM and Divine Liturgy on
             Sunday mornings at 9:00 AM.
           </p>
         </div>
         <div class="grid-card">
-          <img 
-            src="/images/home/feast.jpg" 
+          <img
+            src="/images/home/feast.jpg"
             alt="Feast day celebrations"
             width="300"
             height="200"
           />
           <h3>Feast Days</h3>
           <p>
-            Throughout the year, we celebrate the great feasts and holy days of the Church 
+            Throughout the year, we celebrate the great feasts and holy days of the Church
             with special services.
           </p>
         </div>
@@ -80,9 +84,9 @@ import "../styles/home.scss";
     <section class="recent-updates">
       <div class="text-container">
 
-        <h2>Parish Life & Celebrations</h2>
+        <h2>Parish News & Celebrations</h2>
         <p>
-          Experience the richness of Orthodox tradition through our feast days, 
+          Experience the richness of Orthodox tradition through our feast days,
           celebrations, and community gatherings throughout the liturgical year.
         </p>
       </div>
@@ -91,74 +95,30 @@ import "../styles/home.scss";
           <div class="parish-section">
             <h3>Feast Days & Celebrations</h3>
             <p>
-              Join us in celebrating the great feasts of the Church including Pascha (Easter), 
-              the Nativity (Christmas), Theophany, and other significant holy days that mark 
+              Join us in celebrating the great feasts of the Church including Pascha (Easter),
+              the Nativity (Christmas), Theophany, and other significant holy days that mark
               our journey through the liturgical calendar.
             </p>
           </div>
           <div class="parish-section">
             <h3>Community Life</h3>
             <p>
-              Our parish family comes together for fellowship meals, cultural celebrations, 
-              and special events. Discover how we live out our faith together through worship, 
+              Our parish family comes together for fellowship meals, cultural celebrations,
+              and special events. Discover how we live out our faith together through worship,
               service, and brotherhood.
             </p>
           </div>
           <div class="button-container">
-            <a href="/parish-life" class="button primary large">Explore Parish Life</a>
+            <a href="/parish-news" class="button primary large">Explore Parish News</a>
           </div>
         </div>
       </Panel>
     </section>
     <section class="resources-section">
       <div class="text-container">
-
         <h2>Resources for Your Faith Journey</h2>
       </div>
-      <div class="grid-3-col">
-        <div class="grid-card">
-          <img 
-          class="line-art"
-            src="/images/line-art/gospel.svg" 
-            alt="Orthodox Christian library resources"
-          />
-          <h3>Library & Music</h3>
-          <p>
-            Access our collection of service texts, Orthodox music, and spiritual resources 
-            for prayer and study.
-          </p>
-          <!-- Links to /library page -->
-          <a href="/library" class="button secondary large">Browse Library</a>
-        </div>
-        <div class="grid-card">
-          <img 
-            class="line-art"
-            src="/images/line-art/chalice2.svg" 
-            alt="Support St. Nicholas parish"
-          />
-          <h3>Support Our Parish</h3>
-          <p>
-            Your generous contributions help maintain our church and support our mission 
-            to serve our community and glorify God.
-          </p>
-          <!-- Links to /giving page -->
-          <a href="/giving" class="button secondary large">Ways to Give</a>
-        </div>
-        <div class="grid-card">
-          <img 
-            class="line-art"
-            src="/images/line-art/priest.svg" 
-            alt="Contact St. Nicholas church"
-          />
-          <h3>Get in Touch</h3>
-          <p>
-            Have questions or want to learn more about Orthodoxy? We'd love to hear from you 
-            and welcome you to our parish family.
-          </p>
-          <!-- Links to /contact page -->
-          <a href="/contact" class="button secondary large">Contact Us</a>
-        </div>
-      </div>
+      <ResourcesCarousel />
     </section>
   </div>
 </Layout>

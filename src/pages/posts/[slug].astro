@@ -19,7 +19,10 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={`${post.data.title} - St. Nicholas Orthodox Church`}>
+<Layout
+  title={`${post.data.title} - St. Nicholas Orthodox Church`}
+  description={post.data.description}
+>
 
     <div class="content">
       <div class="post-hero">
@@ -33,7 +36,7 @@ const { Content } = await post.render();
           height="600"
         />
       </div>
-      <a href="/parish-life" class="button tertiary small"><span class="icon-arrow_back_ios"></span> Back to Parish Life</a>
+      <a href="/parish-news" class="button tertiary small"><span class="icon-arrow_back_ios"></span> Back to Parish News</a>
 
       <header class="post-header">
         <h1>{post.data.title}</h1>

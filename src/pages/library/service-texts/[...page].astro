@@ -1,18 +1,20 @@
 ---
+/// <reference types="node" />
 import Layout from "../../../layouts/Layout.astro";
 import PageH1 from "../../../components/PageH1.astro";
 import type { GetStaticPaths, Page } from "astro";
 import "../../../styles/service-texts.scss";
 
-import fs from 'fs';
-import path from 'path';
+import { readdirSync } from "fs";
+import { resolve } from "path";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const serviceTextsDir = path.resolve('./public/service-texts');
-  const files = fs.readdirSync(serviceTextsDir)
-    .filter((file) => file.endsWith('.pdf'));
-  const allServiceTexts = files.map((file) => ({
-    name: file.replace(/\.pdf$/, ''),
+  const serviceTextsDir = resolve("./public/service-texts");
+  const files = readdirSync(serviceTextsDir, { encoding: "utf8" }).filter((file: string) =>
+    file.endsWith(".pdf")
+  );
+  const allServiceTexts = files.map((file: string) => ({
+    name: file.replace(/\.pdf$/, ""),
     file,
   }));
   return paginate(allServiceTexts, { pageSize: 9 });
@@ -26,7 +28,10 @@ type Props = {
 const { page } = Astro.props;
 ---
 
-<Layout title="Service Texts - St. Nicholas Orthodox Church">
+<Layout
+  title="Service Texts - St. Nicholas Orthodox Church"
+  description="Access Orthodox service books and prayer text PDFs from the St. Nicholas parish library."
+>
   <div class="content">
     <PageH1
       title="Service Texts"

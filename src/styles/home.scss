@@ -93,9 +93,11 @@ h1 {
 }
 
 .resources-section {
+  margin-bottom: 50px;
   p {
     margin-bottom: 24px;
   }
+
 }
 
 @media (min-width: 768px) {
@@ -117,6 +119,7 @@ h1 {
   .content {
     gap: 120px;
   }
+
 }
 
 @media (min-width: 1350px) {

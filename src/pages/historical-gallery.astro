@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageH1 from "../components/PageH1.astro";
-import "../styles/historical-gallery.scss";
+import "../styles/gallery.scss";
 
 const images = [
   "47EE84F1-21DA-400C-9EAD-E55CC05BB074.jpeg",
@@ -25,7 +25,10 @@ const images = [
 ];
 ---
 
-<Layout title="Historical Gallery - St. Nicholas Orthodox Church">
+<Layout
+  title="Historical Gallery - St. Nicholas Orthodox Church"
+  description="Explore historical photos of St. Nicholas Orthodox Church, including interior changes and consecration moments."
+>
 
   <div class="content">
     <PageH1 title="Historical Gallery" subheader="The church interior, changes, and consecration" />

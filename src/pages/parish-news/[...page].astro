@@ -24,9 +24,12 @@ type Props = {
 const { page } = Astro.props;
 ---
 
-<Layout title="Parish Life - St. Nicholas Orthodox Church">
+<Layout
+  title="Parish News - St. Nicholas Orthodox Church"
+  description="Read recent parish news, events, and community updates from St. Nicholas Orthodox Church."
+>
   <div class="content">
-    <PageH1 title="Parish Life" subheader="See what's been happening recently in the Parish" />
+    <PageH1 title="Parish News" subheader="See what's been happening recently in the Parish" />
       <div class="grid-3-col">
         {
           page.data.map((post) => (

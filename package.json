@@ -9,7 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "astro": "^5.16.15",
     "sass": "^1.97.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21"
   }
 }
