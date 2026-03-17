@@ -252,6 +252,17 @@ ul {
 }
 
 
+@media (min-width: 800px) {
+  .grid-3-col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .grid-2-col {
+    gap: 48px;
+  }
+}
+
 // Desktop styles
 @media (min-width: 1000px) {
 
@@ -268,7 +279,7 @@ ul {
   }
 
   .grid-3-col {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .grid-2-col {
@@ -277,17 +288,6 @@ ul {
 
   .grid-2-col-narrow {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  .grid-3-col {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-  }
-
-  .grid-2-col {
-    gap: 48px;
   }
 }
 

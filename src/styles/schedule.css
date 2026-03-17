@@ -1,0 +1,61 @@
+.service {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-direction: column;
+  text-align: center;
+}
+.service img {
+  width: 100%;
+  display: block;
+  height: 200px;
+}
+.service p {
+  color: var(--off-black);
+}
+.service .inner {
+  display: flex;
+  flex-direction: column;
+}
+.service .inner .service-header {
+  margin-bottom: 8px;
+}
+
+.grid-2-col-narrow {
+  margin-bottom: 100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.calendar-header {
+  border-top: 1px solid var(--border-color-dark);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.calendar-header::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: var(--off-white);
+  border: 1px solid var(--border-color-dark);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+
+@media (min-width: 800px) {
+  .regular-schedule {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+  }
+  .regular-schedule .service {
+    width: 100%;
+  }
+}/*# sourceMappingURL=schedule.css.map */

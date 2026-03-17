@@ -1,0 +1,62 @@
+.service-text-item {
+  border-top: 1px solid var(--border-color-dark);
+  padding-top: 40px;
+  position: relative;
+  width: 100%;
+}
+.service-text-item h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.service-text-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: var(--off-white);
+  border: 1px solid var(--border-color-dark);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+.service-text-item:nth-child(-n+1) {
+  border-top: none;
+  padding-top: 0;
+}
+.service-text-item:nth-child(-n+1)::before {
+  display: none;
+}
+@media (min-width: 800px) {
+  .service-text-item:nth-child(-n+2) {
+    border-top: none;
+    padding-top: 0;
+  }
+  .service-text-item:nth-child(-n+2)::before {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .service-text-item:nth-child(-n+3) {
+    border-top: none;
+    padding-top: 0;
+  }
+  .service-text-item:nth-child(-n+3)::before {
+    display: none;
+  }
+}
+
+.pdf-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pdf-actions a {
+  min-width: 90px;
+}/*# sourceMappingURL=service-texts.css.map */
