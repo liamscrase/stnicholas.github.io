@@ -6,7 +6,9 @@
       "Read(//c/Users/Liam Scrase/Desktop/stnicholas.github.io/**)",
       "Bash(done)",
       "Bash(npm install:*)",
-      "WebFetch(domain:motion.dev)"
+      "WebFetch(domain:motion.dev)",
+      "Bash(py -m pip install playwright -q)",
+      "Bash(py -m playwright install chromium firefox --quiet)"
     ]
   }
 }
