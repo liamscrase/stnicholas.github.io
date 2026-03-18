@@ -74,9 +74,6 @@ const resources: Resource[] = [
     flex: 1;
   }
 
-  .resources-splide .splide__arrow--prev { left: 0; }
-  .resources-splide .splide__arrow--next { right: 0; }
-
   .resources-splide .splide__arrow {
     background: transparent;
     box-shadow: none;
@@ -94,84 +91,29 @@ const resources: Resource[] = [
     bottom: -3rem;
   }
 
-  .resources-splide .splide__pagination .splide__pagination__page.is-active {
+  .resources-splide .splide__pagination__page.is-active {
     background: var(--red);
-  }
-
-  @media (min-width: 1024px) {
-    .resources-splide .splide__list {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
-      transform: none !important;
-    }
-
-    .resources-splide .splide__slide {
-      width: auto !important;
-    }
-
-    .resources-splide .splide__arrows,
-    .resources-splide .splide__pagination {
-      display: none;
-    }
   }
 </style>
 
 <script>
-  declare var Splide: any;
+  import Splide from "@splidejs/splide";
+  import "@splidejs/splide/dist/css/splide.min.css";
 
   const el = document.querySelector<HTMLElement>("[data-resources-carousel]");
   if (el) {
-    let splide: any;
-    let cssLoaded = false;
-    const mq = window.matchMedia("(max-width: 1023px)");
-
-    function loadAndMount() {
-      if (!cssLoaded) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css";
-        document.head.appendChild(link);
-        cssLoaded = true;
-      }
-      if (typeof Splide !== "undefined") {
-        doMount();
-      } else {
-        const s = document.createElement("script");
-        s.src = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js";
-        s.onload = doMount;
-        document.head.appendChild(s);
-      }
-    }
-
-    function doMount() {
-      if (!splide) {
-        splide = new Splide(el, {
-          type: "loop",
-          perPage: 2,
-          perMove: 1,
-          gap: "2rem",
-          arrows: true,
-          pagination: true,
-          clones: 3,
-          breakpoints: {
-            767: { perPage: 1, clones: 3 },
-          },
-        });
-        splide.mount();
-      }
-    }
-
-    function mount() {
-      if (mq.matches) {
-        loadAndMount();
-      } else if (splide) {
-        splide.destroy(true);
-        splide = undefined;
-      }
-    }
-
-    mount();
-    mq.addEventListener("change", mount);
+    new Splide(el, {
+      type: "loop",
+      perPage: 3,
+      perMove: 1,
+      gap: "3rem",
+      arrows: false,
+      pagination: false,
+      drag: false,
+      breakpoints: {
+        1023: { perPage: 2, arrows: true, pagination: true, drag: true },
+        767:  { perPage: 1 },
+      },
+    }).mount();
   }
 </script>

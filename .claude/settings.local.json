@@ -8,7 +8,9 @@
       "Bash(npm install:*)",
       "WebFetch(domain:motion.dev)",
       "Bash(py -m pip install playwright -q)",
-      "Bash(py -m playwright install chromium firefox --quiet)"
+      "Bash(py -m playwright install chromium firefox --quiet)",
+      "Bash(py \"C:\\\\Users\\\\Liam Scrase\\\\.claude\\\\plugins\\\\cache\\\\anthropic-agent-skills\\\\example-skills\\\\b0cbd3df1533\\\\skills\\\\webapp-testing\\\\scripts\\\\with_server.py\" --server \"npm run dev\" --port 4321 -- py check_learning.py)",
+      "Bash(rm check_learning.py)"
     ]
   }
 }
