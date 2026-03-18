@@ -104,15 +104,17 @@ h1 {
   text-align: center;
 
   .inner {
-    padding: 32px;
+    padding: 24px 32px 32px 32px;
+
+    p, .button {
+      margin-bottom: 32px;
+    }
 
     .img-container {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
       justify-content: center;
-      margin-top: 32px;
-      margin-bottom: 8px;
 
       img {
         width: 100%;
@@ -150,12 +152,7 @@ h1 {
   .gallery-section {
 
     .inner {
-      padding: 50px;
-
-      p {
-        margin-bottom: 50px;
-
-      }
+      padding: 40px 50px 50px 50px;
 
       .img-container {
         display: grid;

@@ -56,44 +56,7 @@ const resources: Resource[] = [
 </div>
 
 <style is:global>
-  .resources-splide {
-    margin-top: 40px;
-  }
-
-  .resources-splide .splide__slide {
-    height: auto;
-  }
-
-  .resources-splide .grid-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .resources-splide .grid-card p {
-    flex: 1;
-  }
-
-  .resources-splide .splide__arrow {
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .resources-splide .splide__arrow:hover {
-    background: transparent;
-  }
-
-  .resources-splide .splide__arrow svg {
-    fill: var(--black);
-  }
-
-  .resources-splide .splide__pagination {
-    bottom: -3rem;
-  }
-
-  .resources-splide .splide__pagination__page.is-active {
-    background: var(--red);
-  }
+  @use "../styles/resources-carousel.scss";
 </style>
 
 <script>

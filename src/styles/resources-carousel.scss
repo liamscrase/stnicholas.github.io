@@ -1,0 +1,38 @@
+.resources-splide {
+  margin-top: 40px;
+
+  .splide__slide {
+    height: auto;
+  }
+
+  .grid-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      flex: 1;
+    }
+  }
+
+  .splide__arrow {
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background: transparent;
+    }
+
+    svg {
+      fill: var(--black);
+    }
+  }
+
+  .splide__pagination {
+    bottom: -3rem;
+
+    &__page.is-active {
+      background: var(--red);
+    }
+  }
+}
