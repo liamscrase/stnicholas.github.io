@@ -13,5 +13,6 @@ export default defineConfig({
     '/contact-us': '/contact',
     '/history': '/',
     '/sample-page': '/',
+    '/donations': '/giving'
   },
 });
