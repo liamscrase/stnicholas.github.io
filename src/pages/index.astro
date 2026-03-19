@@ -9,43 +9,41 @@ import "../styles/home.scss";
   title="St. Nicholas Russian Orthodox Parish | Christchurch, NZ"
   description="St. Nicholas Orthodox Church in Christchurch, New Zealand. Find service times, parish news, and resources for faith and learning."
 >
-
-    <div class="hero-section">
-            <img
-        class="hero-img"
-        src="/images/banner.webp"
-        sizes="50vw"
-        alt="St Nicholas hero banner"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        width="1600"
-        height="900"
-      />
-      <div class="content">
-        <div class="hero-content">
-          <h1>Welcome to St. Nicholas Russian Orthodox Parish<br>
-            <span>Christchurch, New Zealand</span>
-          </h1>
-          <div class="button-container">
-            <a href="/schedule" class="button primary large">View Service Times</a>
-            <a href="/parish-news" class="button secondary large">Parish News</a>
-          </div>
+  <div class="hero-section">
+    <img
+      class="hero-img"
+      src="/images/banner.webp"
+      sizes="50vw"
+      alt="St Nicholas hero banner"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      width="1600"
+      height="900"
+    />
+    <div class="content">
+      <div class="hero-content">
+        <h1>
+          Welcome to St. Nicholas Orthodox Parish<br />
+          <span>Christchurch, New Zealand</span>
+        </h1>
+        <div class="button-container">
+          <a href="/schedule" class="button primary large">View Service Times</a
+          >
+          <a href="/contact" class="button secondary large">Get In Touch</a>
         </div>
-
       </div>
     </div>
-
+  </div>
 
   <!-- Service Highlights Section -->
   <div class="content home">
-
     <section class="service-highlights">
       <div class="text-container">
         <h2>Join Us for Worship</h2>
         <p>
-          All are welcome to attend our services and experience the reverence and beauty
-          of the Divine Liturgy in the Orthodox tradition.
+          All are welcome to attend our services and experience the reverence
+          and beauty of the Divine Liturgy in the Orthodox tradition.
         </p>
       </div>
       <div class="grid-2-col">
@@ -58,9 +56,14 @@ import "../styles/home.scss";
           />
           <h3>Regular Services</h3>
           <p>
-            Join us for Vespers on Saturday evenings at 7:00 PM and Divine Liturgy on
-            Sunday mornings at 9:00 AM.
+            Join us for Vespers on Saturday evenings at 7 pm and Divine
+            Liturgy on Sunday mornings at 9 am.
           </p>
+          <div class="button-container">
+            <a href="/schedule" class="button secondary medium"
+              >View Service Times</a
+            >
+          </div>
         </div>
         <div class="grid-card">
           <img
@@ -71,38 +74,39 @@ import "../styles/home.scss";
           />
           <h3>Feast Days</h3>
           <p>
-            Throughout the year, we celebrate the great feasts and holy days of the Church
-            with special services.
+            Throughout the year, we celebrate the great feasts and holy days of
+            the Church with special services.
           </p>
+          <div class="button-container">
+            <a href="/schedule#calendar-section" class="button secondary medium">See Full Calendar</a>
+          </div>
         </div>
-      </div>
-      <div class="button-container">
-        <a href="/schedule" class="button primary large">View Full Schedule</a>
       </div>
     </section>
 
     <section class="gallery-section">
       <Panel>
         <div class="inner">
-
           <h2>See Our Icon Gallery</h2>
           <p>
-            Explore our collection of icons, each with its own story and significance in
-            the Orthodox faith.
+            Explore our collection of icons, each with its own story and
+            significance in the Orthodox faith.
           </p>
-          <a href="/icon-gallery" class="button primary large">View Full Gallery</a>
+          <a href="/icon-gallery" class="button secondary medium"
+            >View Full Gallery</a
+          >
           <div class="img-container">
-            <img src="/images/icon-gallery/test-6.jpg" alt="">
-            <img src="/images/icon-gallery/test-7.jpg" alt="">
-            <img src="/images/icon-gallery/test-14.jpg" alt="">
-            <img src="/images/icon-gallery/test-15.jpg" alt="">
+            <img src="/images/icon-gallery/test-6.jpg" alt="" />
+            <img src="/images/icon-gallery/test-7.jpg" alt="" />
+            <img src="/images/icon-gallery/test-14.jpg" alt="" />
+            <img src="/images/icon-gallery/test-15.jpg" alt="" />
           </div>
         </div>
       </Panel>
     </section>
     <section class="resources-section">
       <div class="text-container">
-        <h2>Resources for Your Faith Journey</h2>
+        <h2>Resources For Your Faith Journey</h2>
       </div>
       <ResourcesCarousel />
     </section>

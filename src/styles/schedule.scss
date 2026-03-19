@@ -1,16 +1,26 @@
+.page-header[data-astro-cid-kvnwbuai] {
+    margin: 0 auto 50px;
+}
+
+.main-schedule {
+    display: flex;
+    flex-direction: row;
+    row-gap: 40px;
+    column-gap: 24px;
+    margin-bottom: 100px;
+            justify-content: center;
+            align-items: center;
+
+}
+
 .service {
     display: flex;
     align-items: center;
     gap: 32px;
     flex-direction: column;
     text-align: center;
-
-    img {
-        width: 100%;
-        display: block;
-        height: 200px;
-
-    }
+    width: 100%;
+    max-width: 300px;
 
     p {
         color: var(--off-black);
@@ -24,10 +34,6 @@
             margin-bottom: 8px;
         }
     }
-}
-
-.grid-2-col-narrow {
-    margin-bottom: 100px;
 }
 
 h2 {
@@ -56,9 +62,8 @@ h2 {
 }
 
 
-
-
 @media (min-width: 800px) {
+
     .regular-schedule {
         display: flex;
         flex-direction: row;

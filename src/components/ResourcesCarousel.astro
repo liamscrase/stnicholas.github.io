@@ -8,6 +8,9 @@ interface Resource {
   label: string;
 }
 
+import "../styles/resources-carousel.scss";
+
+
 const resources: Resource[] = [
   {
     image: "/images/line-art/gospel.svg",
@@ -43,21 +46,17 @@ const resources: Resource[] = [
     <ul class="splide__list">
       {resources.map((r) => (
         <li class="splide__slide">
-          <div class="grid-card">
+          <div class="resource-card">
             <img class="line-art" src={r.image} alt={r.alt} />
             <h3>{r.heading}</h3>
             <p>{r.description}</p>
-            <a href={r.href} class="button secondary large">{r.label}</a>
+            <a href={r.href} class="button secondary medium">{r.label}</a>
           </div>
         </li>
       ))}
     </ul>
   </div>
 </div>
-
-<style is:global>
-  @use "../styles/resources-carousel.scss";
-</style>
 
 <script>
   import Splide from "@splidejs/splide";

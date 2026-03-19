@@ -10,22 +10,34 @@ import "../styles/FullCalendar.scss";
   title="Schedule - St. Nicholas Orthodox Church"
   description="View weekly worship times and upcoming services at St. Nicholas Orthodox Church Christchurch."
 >
+  <script slot="head" is:inline>
+    (function () {
+      const hash = location.hash;
+      if (!hash) return;
+      history.replaceState(null, "", location.pathname + location.search);
+      document.addEventListener("DOMContentLoaded", function () {
+        const el = document.querySelector(hash);
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 20, behavior: "smooth" });
+      });
+    })();
+  </script>
+
   <div class="content">
     <PageH1
       title="Schedule"
       subheader="Join us for our weekly services at St. Nicholas Orthodox Church. All are welcome to attend and experience the beauty of Orthodox worship."
     />
 
-    <div class="grid-2-col-narrow">
-      <div class="grid-card">
+    <div class="main-schedule">
+      <div class="service">
         <img class="line-art" src="/images/line-art/christ.svg" alt="vespers" />
 
         <div class="inner">
           <h2 class="service-header">Vespers</h2>
-          <p>Saturdays at 7:00 PM</p>
+          <p>Saturdays at 7 pm</p>
         </div>
       </div>
-      <div class="grid-card">
+      <div class="service">
         <img
           class="line-art"
           src="/images/line-art/chalice.svg"
@@ -33,13 +45,13 @@ import "../styles/FullCalendar.scss";
         />
 
         <div class="inner">
-          <h2 class="service-header">Divine Liturgy</h2>
-          <p>Sundays at 9:00 AM</p>
+          <h2 class="service-header">Liturgy</h2>
+          <p>Sundays at 9 am</p>
         </div>
       </div>
     </div>
 
-    <div class="calendar-section">
+    <div id="calendar-section" class="calendar-section">
       <h2 class="calendar-header">See the full calendar</h2>
       <FullCalendar />
     </div>
