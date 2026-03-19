@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageH1 from "../components/PageH1.astro";
+---
+
+<Layout
+  title="404 — Page Not Found"
+  description="Page not found."
+>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 500px;" class="content">
+    <PageH1 title="404" subheader="This page could not be found." />
+    <a href="/" class="button primary medium">Go to Home Page</a>
+  </div>
+</Layout>
