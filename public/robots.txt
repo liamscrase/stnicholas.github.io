@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.stnicholaschurch.org.nz/sitemap-index.xml
