@@ -4,9 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"  # Rebuild every 6 hours to pick up new calendar events
 
 permissions:
   contents: read
+  
   pages: write
   id-token: write
 
