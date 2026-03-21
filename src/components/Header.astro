@@ -40,6 +40,7 @@
 <nav class="mobile-navbar">
   <input type="checkbox" id="menu-toggle" class="menu-toggle" />
   <div class="mobile-navbar-container">
+    <a href="/schedule/" class="icon-calendar"></a>
     <a href="/"><img class="logo" src="/images/logo-main.svg" alt="St. Nicholas Logo" width="218" height="218" /></a>
     <label for="menu-toggle" class="hamburger">
       <span></span>
@@ -54,19 +55,22 @@
         <li><a href="/schedule/">Schedule</a></li>
         <li class="offcanvas-dropdown">
           <button type="button" class="offcanvas-dropdown-toggle" aria-expanded="false" aria-controls="offcanvas-parish" id="offcanvas-parish-btn">Our Parish</button>
-          <ul class="offcanvas-dropdown-menu" id="offcanvas-parish" role="region" aria-labelledby="offcanvas-parish-btn">
-            <li><a href="/parish-news/">Parish News</a></li>
-            <li><a href="/icon-gallery/">Icon Gallery</a></li>
-            <li><a href="/historical-gallery/">Historical Gallery</a></li>
-          </ul>
+          <div class="offcanvas-dropdown-menu" id="offcanvas-parish" role="region" aria-labelledby="offcanvas-parish-btn">
+            <ul>
+              <li><a href="/parish-news/">Parish News</a></li>
+              <li><a href="/icon-gallery/">Icon Gallery</a></li>
+              <li><a href="/historical-gallery/">Historical Gallery</a></li>
+            </ul>
+          </div>
         </li>
         <li class="offcanvas-dropdown"> 
           <button type="button" class="offcanvas-dropdown-toggle" aria-expanded="false" aria-controls="offcanvas-library" id="offcanvas-library-btn">Library</button>
-          <ul class="offcanvas-dropdown-menu" id="offcanvas-library" role="region" aria-labelledby="offcanvas-library-btn">
-            <li><a href="/library/music/">Music</a></li>
-            <li><a href="/library/service-texts/">Service Texts</a></li>
-            <li><a href="/library/learning/">Learning</a></li>
-          </ul>
+          <div class="offcanvas-dropdown-menu" id="offcanvas-library" role="region" aria-labelledby="offcanvas-library-btn">
+            <ul>
+              <li><a href="/library/music/">Music</a></li>
+              <li><a href="/library/service-texts/">Service Texts</a></li>
+            </ul>
+          </div>
         </li>
         <li><a href="/giving/">Giving</a></li>
         <li><a href="/contact/">Contact</a></li>
