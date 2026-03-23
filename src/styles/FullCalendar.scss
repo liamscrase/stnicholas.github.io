@@ -8,6 +8,7 @@
   border: 1px solid var(--border-color);
   padding: 1.75rem 2rem 2rem;
   position: relative;
+  overflow: hidden;
 
   @media (max-width: 640px) {
     padding: 1rem;
