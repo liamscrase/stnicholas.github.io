@@ -250,6 +250,17 @@ import "../styles/home.scss";
 
 ---
 
-### 16. Father Valentin profile photo added to contact page (`src/pages/contact.astro`)
+### 16. Hash scroll fixed (`src/pages/schedule.astro`)
+
+**Problem:** `scroll-behavior: smooth` on `html` applies to in-page scrolling only — browsers do not honour it for the initial fragment jump on page load. Clicking "View Full Calendar" produced an instant jump regardless.
+
+**Fix:**
+- `history.replaceState` in `<head>` strips the hash early, preventing the browser's native instant fragment jump.
+- `DOMContentLoaded` + `setTimeout(0)` defers our call past any residual native scroll attempt, then uses `scrollIntoView({ behavior: "smooth" })` to animate smoothly.
+- `scroll-margin-top: 20px` added to `#calendar-section` in `schedule.scss` so the element lands with a small gap below the viewport top.
+
+---
+
+### 17. Father Valentin profile photo added to contact page (`src/pages/contact.astro`)
 
 **Change:** Replaced the placeholder SVG with the real photo `/contacts/fr-valentine.jpg` for Father Valentin Basiuk. Also added a descriptive `alt` attribute.

@@ -10,22 +10,11 @@ import "../styles/FullCalendar.scss";
   title="Schedule - St. Nicholas Orthodox Church"
   description="View weekly worship times and upcoming services at St. Nicholas Orthodox Church Christchurch."
 >
-  <script slot="head" is:inline>
-    (function () {
-      const hash = location.hash;
-      if (!hash) return;
-      history.replaceState(null, "", location.pathname + location.search);
-      document.addEventListener("DOMContentLoaded", function () {
-        const el = document.querySelector(hash);
-        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 20, behavior: "smooth" });
-      });
-    })();
-  </script>
 
   <div class="content">
     <PageH1
       title="Schedule"
-      subheader="Join us for regular services every Saturday at 7 pm and Sunday at 9 am. Be sure to check the official calendar below for any changes or special services throughout the year."
+      subheader="Join us for regular services every Saturday at 7 pm and Sunday at 9 am. Be sure to check the official calendar below for any changes or special services. "
     />
 
     <div class="main-schedule">
