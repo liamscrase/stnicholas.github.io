@@ -304,8 +304,6 @@ ul {
 #fullcalendar {
   *, *::before, *::after {
     box-sizing: content-box;
-    margin: revert;
-    padding: revert;
   }
 
   table {
