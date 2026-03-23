@@ -247,3 +247,9 @@ import "../styles/home.scss";
 ```
 
 `Layout.astro` imports the three global stylesheets (`general.scss`, `navigation.scss`, `style.css`) directly, replacing the three `<link>` tags that were previously in `<head>`. All `<link slot="head">` tags for page-specific styles have been removed. The 19 orphaned files were deleted from `public/`.
+
+---
+
+### 16. Father Valentin profile photo added to contact page (`src/pages/contact.astro`)
+
+**Change:** Replaced the placeholder SVG with the real photo `/contacts/fr-valentine.jpg` for Father Valentin Basiuk. Also added a descriptive `alt` attribute.
