@@ -190,7 +190,7 @@
     span {
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 0;
       width: 100%;
       height: 2px;
       background: var(--black);
@@ -198,15 +198,15 @@
       transition: transform var(--duration-normal) var(--ease-smooth), opacity var(--duration-fast) var(--ease-smooth);
 
       &:nth-child(1) {
-        transform: translateY(calc(-50% - 8px));
+        transform: translateY(2px);
       }
 
       &:nth-child(2) {
-        transform: translateY(-50%);
+        transform: translateY(11px);
       }
 
       &:nth-child(3) {
-        transform: translateY(calc(-50% + 8px));
+        transform: translateY(20px);
       }
     }
   }
@@ -214,7 +214,7 @@
   // Menu open: hamburger → X
   .menu-toggle:checked~.mobile-navbar-container .hamburger span {
     &:nth-child(1) {
-      transform: translateY(-50%) rotate(45deg);
+      transform: translateY(11px) rotate(45deg);
     }
 
     &:nth-child(2) {
@@ -222,7 +222,7 @@
     }
 
     &:nth-child(3) {
-      transform: translateY(-50%) rotate(-45deg);
+      transform: translateY(11px) rotate(-45deg);
     }
   }
 }
