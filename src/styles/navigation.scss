@@ -190,28 +190,23 @@
     span {
       position: absolute;
       left: 0;
+      top: 50%;
       width: 100%;
       height: 2px;
       background: var(--black);
-      border-radius: 2px;
+      border-radius: 1px;
       transition: transform var(--duration-normal) var(--ease-smooth), opacity var(--duration-fast) var(--ease-smooth);
 
       &:nth-child(1) {
-        top: 50%;
-        margin-top: -1px;
-        transform: translateY(-9px);
+        transform: translateY(calc(-50% - 8px));
       }
 
       &:nth-child(2) {
-        top: 50%;
-        margin-top: -1px;
-        transform: translateY(0);
+        transform: translateY(-50%);
       }
 
       &:nth-child(3) {
-        top: 50%;
-        margin-top: -1px;
-        transform: translateY(9px);
+        transform: translateY(calc(-50% + 8px));
       }
     }
   }
@@ -219,7 +214,7 @@
   // Menu open: hamburger → X
   .menu-toggle:checked~.mobile-navbar-container .hamburger span {
     &:nth-child(1) {
-      transform: translateY(0) rotate(45deg);
+      transform: translateY(-50%) rotate(45deg);
     }
 
     &:nth-child(2) {
@@ -227,7 +222,7 @@
     }
 
     &:nth-child(3) {
-      transform: translateY(0) rotate(-45deg);
+      transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
